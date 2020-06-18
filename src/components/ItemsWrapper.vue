@@ -13,6 +13,7 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
 import { ProjectData } from "@/types";
 import ProjectItem from "./ProjectItem.vue";
+import { LinkIconId } from "../enums";
 
 @Component({
   components: {
@@ -30,8 +31,18 @@ export default class ItemsWrapper extends Vue {
       description:
         "Images are distributed on a round layout. Selected image is placed in the center. Fusce a congue urna. Ut ac blandit odio. Sed condimentum lacus non magna tincidunt volutpat. Morbi interdum suscipit nisl sed convallis. Aliquam sed finibus augue, quis gravida risus. Maecenas sit amet semper dolor. Nullam orci enim, volutpat in vestibulum vitae, dapibus nec quam. In mollis, nulla a bibendum elementum, sem est iaculis purus, nec condimentum lacus nibh vitae tortor.",
       links: [
-        { type: "codepen", value: "", title: "View CodePen" },
-        { type: "project", value: "", title: "View live" }
+        {
+          type: "codepen",
+          value: "",
+          title: "View CodePen",
+          iconId: LinkIconId.CodePen
+        },
+        {
+          type: "project",
+          value: "",
+          title: "View live",
+          iconId: LinkIconId.External
+        }
       ]
     }
   ];

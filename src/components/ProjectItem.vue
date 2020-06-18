@@ -43,18 +43,10 @@
           v-for="(link, i) in projectData.links"
           :key="i"
         >
-          <p>link</p>
-        </a>
-        <!-- <a href="#" target="_blank" title="View CodePen">
           <svg class="iconBtn">
-            <use href="#codepenIcon" />
+            <use :href="link.iconId" />
           </svg>
         </a>
-        <a href="#" target="_blank" title="View live">
-          <svg class="iconBtn">
-            <use href="#externalLinkIcon" />
-          </svg>
-        </a> -->
       </div>
     </div>
   </div>

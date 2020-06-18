@@ -1,3 +1,5 @@
+import { LinkIconId } from "../enums";
+
 export interface ProjectData {
   id?: number,
   title: string,
@@ -8,5 +10,6 @@ export interface ProjectData {
 interface LinkData {
   type: string,
   value: string,
-  title: string
+  title: string,
+  iconId: LinkIconId
 }
