@@ -2,10 +2,11 @@
   <div
     class="itemWrapper"
     :class="{ selected: isSelected, active: isActive }"
-    :style="{ transform }"
+    :style="{ transform, zIndex, transitionDelay }"
     @mouseenter="!isActive ? selectItem() : ''"
     @mouseleave="deselectItem"
-    @click="activateItem"
+    @click="manageItemClick"
+    @transitionend="itemScaleTransitionendHandler"
   >
     <span class="offscreen">{{ projectData.title }}</span>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
@@ -20,7 +21,11 @@
         <tspan x="10" y="185">LAYOUT</tspan>
       </text>
     </svg>
-    <div class="projectInfoContainer" ref="infoContainer" :style="{ fontSize }">
+    <div
+      class="projectInfoContainer"
+      ref="infoContainer"
+      :style="{ fontSize, display, top, left }"
+    >
       <div>
         <button class="closeItemBtn" @click="deactivateItem">
           <svg>
@@ -67,8 +72,15 @@ export default class ProjectItem extends Vue {
   private isSelected = false;
   private isActive = false;
   private activeItemMaxDimension = 780;
-  private fontSize = "inherit";
+  // Item container style
   private transform = "unset";
+  private transitionDelay = "0s";
+  private zIndex = "unset";
+  // Info container style
+  private display = "none";
+  private fontSize = "inherit";
+  private left = "0";
+  private top = "0";
 
   private selectItem(): void {
     console.log("Selected");
@@ -82,7 +94,6 @@ export default class ProjectItem extends Vue {
 
   private activateItem(): void {
     console.log("Activated");
-    this.isActive = true;
     const itemDomRect = this.$el.getBoundingClientRect();
     const itemWidth = itemDomRect.width;
     const itemCenterX = itemDomRect.x + itemWidth / 2;
@@ -102,7 +113,6 @@ export default class ProjectItem extends Vue {
       scaleValue = this.activeItemMaxDimension / (itemWidth * 2);
       finalX = window.innerWidth / 2 - (itemWidth * scaleValue) / 2;
       finalY = window.innerHeight / 2;
-      //this.$refs.infoContainer.style.fontSize = (1 / scaleValue) * 16 + "px";
       this.fontSize = (1 / scaleValue) * 16 + "px";
     } else if (window.innerWidth / window.innerHeight >= 1) {
       // Horizontal or square and smaller
@@ -110,10 +120,6 @@ export default class ProjectItem extends Vue {
       scaleValue = window.innerWidth / (itemWidth * 2);
       finalX = window.innerWidth / 2 - (itemWidth * scaleValue) / 2;
       finalY = window.innerHeight / 2;
-      // this.$refs.infoContainer.style.fontSize =
-      //   ((1 / scaleValue) * 16 * window.innerWidth) /
-      //     this.activeItemMaxDimension +
-      //   "px";
       this.fontSize =
         ((1 / scaleValue) * 16 * window.innerWidth) /
           this.activeItemMaxDimension +
@@ -124,7 +130,6 @@ export default class ProjectItem extends Vue {
       scaleValue = this.activeItemMaxDimension / (itemWidth * 2);
       finalX = window.innerWidth / 2;
       finalY = window.innerHeight / 2 - (itemHeight * scaleValue) / 2;
-      //this.$refs.infoContainer.style.fontSize = (1 / scaleValue) * 16 + "px";
       this.fontSize = (1 / scaleValue) * 16 + "px";
     } else if (window.innerWidth / window.innerHeight < 1) {
       // Vertical and smaller
@@ -132,10 +137,6 @@ export default class ProjectItem extends Vue {
       scaleValue = window.innerHeight / (itemWidth * 2);
       finalX = window.innerWidth / 2;
       finalY = window.innerHeight / 2 - (itemHeight * scaleValue) / 2;
-      // this.$refs.infoContainer.style.fontSize =
-      //   ((1 / scaleValue) * 16 * window.innerHeight) /
-      //     this.activeItemMaxDimension +
-      //   "px";
       this.fontSize =
         ((1 / scaleValue) * 16 * window.innerHeight) /
           this.activeItemMaxDimension +
@@ -143,11 +144,11 @@ export default class ProjectItem extends Vue {
     }
     this.transform = `translate(${finalX - itemCenterX}px,${finalY -
       itemCenterY}px) scale(${scaleValue})`;
-    // Temporary solution, checkout transition hooks with Vue.
-    this.$refs.infoContainer.style.display = "flex";
+    this.display = "flex";
+    this.zIndex = "1";
     setTimeout(() => {
-      if (horizontal) this.$refs.infoContainer.style.left = "100%";
-      else this.$refs.infoContainer.style.top = "100%";
+      if (horizontal) this.left = "100%";
+      else this.top = "100%";
     }, 500);
     // TODO indicate to the parent that this is the active item, maybe emit?
     //activeItem = item;
@@ -157,18 +158,33 @@ export default class ProjectItem extends Vue {
    * Closes the project item.
    */
   private deactivateItem(): void {
-    this.isActive = false;
-    this.$refs.infoContainer.style.left = "0";
-    this.$refs.infoContainer.style.top = "0";
-    // Item
-    //item.style.transitionDelay = "1s"; // Same as the duration of the css transition duration for the .projectInfoContainer
+    console.log("Deactivated");
+    this.left = "0";
+    this.top = "0";
     this.transform = `translate(0px,0px) scale(1)`;
     // TODO tell the parent that this item is not active anymore
     //activeItem = undefined;
   }
 
+  private itemScaleTransitionendHandler(e: TransitionEvent): void {
+    if (e.target === this.$el) {
+      console.log("Item transitionend");
+      if (!this.isActive) {
+        this.isActive = true;
+        // Same as the duration of the css transition duration for the .projectInfoContainer
+        this.transitionDelay = "1s";
+      } else if (this.isActive) {
+        this.isActive = false;
+        this.zIndex = "unset";
+        this.transitionDelay = "0s";
+        this.display = "none";
+      }
+    }
+  }
+
   private manageItemClick(): void {
     if (!this.isActive) {
+      console.log("Fired");
       if (this.mediaQueryHover.matches) {
         // If there is hover.
         this.activateItem();
@@ -205,7 +221,6 @@ export default class ProjectItem extends Vue {
   transition-property: transform;
   transition-duration: 0.5s;
   transition-timing-function: ease;
-  transition-delay: 1s;
   & > svg {
     display: block;
     & > image {
@@ -236,9 +251,7 @@ export default class ProjectItem extends Vue {
 }
 
 .itemWrapper.active {
-  z-index: 1;
   cursor: unset;
-  transition-delay: 0s;
   box-shadow: 0px 0px 12px #555;
   & > svg > image {
     filter: none;
@@ -261,7 +274,6 @@ export default class ProjectItem extends Vue {
 }
 
 .projectInfoContainer {
-  display: none;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
