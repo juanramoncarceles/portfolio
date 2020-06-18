@@ -2,11 +2,11 @@
   <div
     class="itemWrapper"
     :class="{ selected: isSelected, active: isActive }"
-    :style="{ transform, zIndex, transitionDelay }"
+    :style="itemContainerStyle"
     @mouseenter="!isActive ? selectItem() : ''"
     @mouseleave="deselectItem"
     @click="manageItemClick"
-    @transitionend="itemScaleTransitionendHandler"
+    @transitionend="openCloseTransitionendHandler"
   >
     <span class="offscreen">{{ projectData.title }}</span>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
@@ -24,7 +24,7 @@
     <div
       class="projectInfoContainer"
       ref="infoContainer"
-      :style="{ fontSize, display, top, left }"
+      :style="infoContainerStyle"
     >
       <div>
         <button class="closeItemBtn" @click="deactivateItem">
@@ -72,15 +72,17 @@ export default class ProjectItem extends Vue {
   private isSelected = false;
   private isActive = false;
   private activeItemMaxDimension = 780;
-  // Item container style
-  private transform = "unset";
-  private transitionDelay = "0s";
-  private zIndex = "unset";
-  // Info container style
-  private display = "none";
-  private fontSize = "inherit";
-  private left = "0";
-  private top = "0";
+  private itemContainerStyle = {
+    transform: "unset",
+    transitionDelay: "0s",
+    zIndex: "unset"
+  };
+  private infoContainerStyle = {
+    display: "none",
+    fontSize: "inherit",
+    left: "0",
+    top: "0"
+  };
 
   private selectItem(): void {
     console.log("Selected");
@@ -92,6 +94,11 @@ export default class ProjectItem extends Vue {
     this.isSelected = false;
   }
 
+  /**
+   * Opens the project item by scaling it, moving it to the center of the
+   * screen and showing its info container.
+   * TODO Make it responsive so it opens vertically on portrait windows.
+   */
   private activateItem(): void {
     console.log("Activated");
     const itemDomRect = this.$el.getBoundingClientRect();
@@ -113,14 +120,14 @@ export default class ProjectItem extends Vue {
       scaleValue = this.activeItemMaxDimension / (itemWidth * 2);
       finalX = window.innerWidth / 2 - (itemWidth * scaleValue) / 2;
       finalY = window.innerHeight / 2;
-      this.fontSize = (1 / scaleValue) * 16 + "px";
+      this.infoContainerStyle.fontSize = (1 / scaleValue) * 16 + "px";
     } else if (window.innerWidth / window.innerHeight >= 1) {
       // Horizontal or square and smaller
       horizontal = true;
       scaleValue = window.innerWidth / (itemWidth * 2);
       finalX = window.innerWidth / 2 - (itemWidth * scaleValue) / 2;
       finalY = window.innerHeight / 2;
-      this.fontSize =
+      this.infoContainerStyle.fontSize =
         ((1 / scaleValue) * 16 * window.innerWidth) /
           this.activeItemMaxDimension +
         "px";
@@ -130,25 +137,25 @@ export default class ProjectItem extends Vue {
       scaleValue = this.activeItemMaxDimension / (itemWidth * 2);
       finalX = window.innerWidth / 2;
       finalY = window.innerHeight / 2 - (itemHeight * scaleValue) / 2;
-      this.fontSize = (1 / scaleValue) * 16 + "px";
+      this.infoContainerStyle.fontSize = (1 / scaleValue) * 16 + "px";
     } else if (window.innerWidth / window.innerHeight < 1) {
       // Vertical and smaller
       horizontal = false;
       scaleValue = window.innerHeight / (itemWidth * 2);
       finalX = window.innerWidth / 2;
       finalY = window.innerHeight / 2 - (itemHeight * scaleValue) / 2;
-      this.fontSize =
+      this.infoContainerStyle.fontSize =
         ((1 / scaleValue) * 16 * window.innerHeight) /
           this.activeItemMaxDimension +
         "px";
     }
-    this.transform = `translate(${finalX - itemCenterX}px,${finalY -
-      itemCenterY}px) scale(${scaleValue})`;
-    this.display = "flex";
-    this.zIndex = "1";
+    this.itemContainerStyle.transform = `translate(${finalX -
+      itemCenterX}px,${finalY - itemCenterY}px) scale(${scaleValue})`;
+    this.infoContainerStyle.display = "flex";
+    this.itemContainerStyle.zIndex = "1";
     setTimeout(() => {
-      if (horizontal) this.left = "100%";
-      else this.top = "100%";
+      if (horizontal) this.infoContainerStyle.left = "100%";
+      else this.infoContainerStyle.top = "100%";
     }, 500);
     // TODO indicate to the parent that this is the active item, maybe emit?
     //activeItem = item;
@@ -159,32 +166,38 @@ export default class ProjectItem extends Vue {
    */
   private deactivateItem(): void {
     console.log("Deactivated");
-    this.left = "0";
-    this.top = "0";
-    this.transform = `translate(0px,0px) scale(1)`;
+    this.infoContainerStyle.left = "0";
+    this.infoContainerStyle.top = "0";
+    this.itemContainerStyle.transform = `translate(0px,0px) scale(1)`;
     // TODO tell the parent that this item is not active anymore
     //activeItem = undefined;
   }
 
-  private itemScaleTransitionendHandler(e: TransitionEvent): void {
+  /**
+   * Manages the active state of the project item at the end of the open / close transition.
+   */
+  private openCloseTransitionendHandler(e: TransitionEvent): void {
     if (e.target === this.$el) {
       console.log("Item transitionend");
       if (!this.isActive) {
         this.isActive = true;
         // Same as the duration of the css transition duration for the .projectInfoContainer
-        this.transitionDelay = "1s";
+        this.itemContainerStyle.transitionDelay = "1s";
       } else if (this.isActive) {
         this.isActive = false;
-        this.zIndex = "unset";
-        this.transitionDelay = "0s";
-        this.display = "none";
+        this.itemContainerStyle.zIndex = "unset";
+        this.itemContainerStyle.transitionDelay = "0s";
+        this.infoContainerStyle.display = "none";
       }
     }
   }
 
+  /**
+   * Manages the click event on the item according to its active state
+   * and to the hover presence.
+   */
   private manageItemClick(): void {
     if (!this.isActive) {
-      console.log("Fired");
       if (this.mediaQueryHover.matches) {
         // If there is hover.
         this.activateItem();
