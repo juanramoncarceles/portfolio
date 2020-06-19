@@ -53,7 +53,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Emit } from "vue-property-decorator";
 import { ProjectData } from "@/types";
 
 @Component
@@ -75,6 +75,16 @@ export default class ProjectItem extends Vue {
     left: "0",
     top: "0"
   };
+
+  @Emit()
+  private makeCurrent(): ProjectItem {
+    return this;
+  }
+
+  @Emit()
+  private makeNotCurrent(): void {
+    return;
+  }
 
   private selectItem(): void {
     console.log("Selected");
@@ -149,8 +159,8 @@ export default class ProjectItem extends Vue {
       if (horizontal) this.infoContainerStyle.left = "100%";
       else this.infoContainerStyle.top = "100%";
     }, 500);
-    // TODO indicate to the parent that this is the active item, maybe emit?
-    //activeItem = item;
+    // Emits an event to the parent telling that it is the current item.
+    this.makeCurrent();
   }
 
   /**
@@ -161,8 +171,8 @@ export default class ProjectItem extends Vue {
     this.infoContainerStyle.left = "0";
     this.infoContainerStyle.top = "0";
     this.itemContainerStyle.transform = `translate(0px,0px) scale(1)`;
-    // TODO tell the parent that this item is not active anymore
-    //activeItem = undefined;
+    // Emits an event to the parent telling that it is not the current item.
+    this.makeNotCurrent();
   }
 
   /**

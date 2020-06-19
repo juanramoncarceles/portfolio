@@ -5,6 +5,8 @@
       :key="data.id"
       :projectData="data"
       :mediaQueryHover="mediaQueryHover"
+      @make-current="setItem"
+      @make-not-current="unsetItem"
     />
   </div>
 </template>
@@ -23,7 +25,7 @@ import { LinkIconId } from "../enums";
 export default class ItemsWrapper extends Vue {
   @Prop() readonly mediaQueryHover!: MediaQueryList;
 
-  private activeItem!: ProjectItem;
+  private activeItem: ProjectItem | undefined;
   private projectsData: Array<ProjectData> = [
     {
       id: 0,
@@ -46,6 +48,14 @@ export default class ItemsWrapper extends Vue {
       ]
     }
   ];
+
+  private setItem(item: ProjectItem) {
+    this.activeItem = item;
+  }
+
+  private unsetItem() {
+    this.activeItem = undefined;
+  }
 }
 </script>
 
