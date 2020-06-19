@@ -8,6 +8,15 @@
       @make-current="setItem"
       @make-not-current="unsetItem"
     />
+    <div
+      id="bgmask"
+      ref="bgmask"
+      @click="
+        () => {
+          if (activeItem) activeItem.deactivateItem();
+        }
+      "
+    ></div>
   </div>
 </template>
 
@@ -51,10 +60,12 @@ export default class ItemsWrapper extends Vue {
 
   private setItem(item: ProjectItem) {
     this.activeItem = item;
+    (this.$refs.bgmask as HTMLElement).classList.add("active");
   }
 
   private unsetItem() {
     this.activeItem = undefined;
+    (this.$refs.bgmask as HTMLElement).classList.remove("active");
   }
 }
 </script>
@@ -68,6 +79,18 @@ export default class ItemsWrapper extends Vue {
   &.small-screen {
     padding-top: 100vw;
   }
+}
+
+#bgmask {
+  position: absolute;
+  height: 0;
+  width: 100vw;
+  background-color: rgba(60, 60, 60, 0.7);
+  transition: height 1s;
+}
+
+#bgmask.active {
+  height: 100vh;
 }
 
 @media (min-width: 400px) {

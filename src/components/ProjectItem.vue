@@ -21,11 +21,7 @@
         <tspan x="10" y="185">LAYOUT</tspan>
       </text>
     </svg>
-    <div
-      class="projectInfoContainer"
-      ref="infoContainer"
-      :style="infoContainerStyle"
-    >
+    <div class="projectInfoContainer" :style="infoContainerStyle">
       <div>
         <button class="closeItemBtn" @click="deactivateItem">
           <svg>
