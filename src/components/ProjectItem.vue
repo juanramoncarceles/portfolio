@@ -17,8 +17,14 @@
       />
       <rect class="itemBorder" width="200" height="200" style="fill:none;" />
       <text class="itemTitle">
-        <tspan x="10" y="155">ROUND</tspan>
-        <tspan x="10" y="185">LAYOUT</tspan>
+        <tspan
+          x="10"
+          :y="190 - (projectData.svgTitle.length - 1 - i) * 30"
+          v-for="(strFragment, i) in projectData.svgTitle"
+          :key="i"
+        >
+          {{ strFragment }}
+        </tspan>
       </text>
     </svg>
     <div class="projectInfoContainer" :style="infoContainerStyle">

@@ -4,6 +4,7 @@ export interface ProjectData {
   title: string,
   description: string,
   image: string,
+  svgTitle: Array<string>,
   links?: Array<LinkData>
 }
 

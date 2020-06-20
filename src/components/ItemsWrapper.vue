@@ -55,6 +55,7 @@ export default class ItemsWrapper extends Vue {
       description:
         "Images are distributed on a round layout. Selected image is placed in the center. Fusce a congue urna. Ut ac blandit odio. Sed condimentum lacus non magna tincidunt volutpat. Morbi interdum suscipit nisl sed convallis. Aliquam sed finibus augue, quis gravida risus. Maecenas sit amet semper dolor. Nullam orci enim, volutpat in vestibulum vitae, dapibus nec quam. In mollis, nulla a bibendum elementum, sem est iaculis purus, nec condimentum lacus nibh vitae tortor.",
       image: "roundPicsLayout.png",
+      svgTitle: ["ROUND", "LAYOUT"],
       links: [
         new LinkData("", LinkTitle.CodePen, LinkIconId.CodePen),
         new LinkData("", LinkTitle.External, LinkIconId.External)
@@ -65,6 +66,7 @@ export default class ItemsWrapper extends Vue {
       description:
         "Small front-end / serverless app that allows to check food nutrition values. I created all the vector graphics including the UI using SVG. Vanilla JavaScript, SASS, conditional mediaqueries. Responsive SVG user interface. Sed condimentum lacus non magna tincidunt volutpat. Morbi interdum suscipit nisl sed convallis. Aliquam sed finibus augue, quis gravida risus. Maecenas sit amet semper dolor. Nullam orci enim, volutpat in vestibulum vitae, dapibus nec quam. In mollis, nulla a bibendum elementum, sem est iaculis purus, nec condimentum lacus nibh vitae tortor.",
       image: "nutritionFacts.png",
+      svgTitle: ["NUTRITION", "FACTS"],
       links: [
         new LinkData(
           "https://github.com/juanramoncarceles/nutritional-facts",
@@ -83,6 +85,7 @@ export default class ItemsWrapper extends Vue {
       description:
         "Small excercise animating a single SVG symbol which is then created and moved randomly with the <use> element. Morbi interdum suscipit nisl sed convallis. Aliquam sed finibus augue, quis gravida risus. Maecenas sit amet semper dolor. Nullam orci enim, volutpat in vestibulum vitae, dapibus nec quam. In mollis, nulla a bibendum elementum, sem est iaculis purus, nec condimentum lacus nibh vitae tortor.",
       image: "flyingBirds.png",
+      svgTitle: ["FLYING", "BIRDS"],
       links: [
         new LinkData("", LinkTitle.CodePen, LinkIconId.CodePen),
         new LinkData("", LinkTitle.External, LinkIconId.External)
@@ -93,6 +96,7 @@ export default class ItemsWrapper extends Vue {
       description:
         "Green Sock SVG animations of existing logos. Pellentesque placerat ligula dui, at iaculis justo dapibus sed. Fusce a congue urna. Ut ac blandit odio. Sed condimentum lacus non magna tincidunt volutpat. Morbi interdum suscipit nisl sed convallis. Aliquam sed finibus augue, quis gravida risus. Maecenas sit amet semper dolor. Nullam orci enim, volutpat in vestibulum vitae, dapibus nec quam. In mollis, nulla a bibendum elementum, sem est iaculis purus, nec condimentum lacus nibh vitae tortor.",
       image: "logoAnimations.png",
+      svgTitle: ["LOGO", "ANIMATIONS"],
       links: [
         new LinkData("", LinkTitle.CodePen, LinkIconId.CodePen),
         new LinkData("", LinkTitle.CodePen, LinkIconId.CodePen)
@@ -103,6 +107,7 @@ export default class ItemsWrapper extends Vue {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque placerat ligula dui, at iaculis justo dapibus sed. Fusce a congue urna. Ut ac blandit odio. Sed condimentum lacus non magna tincidunt volutpat. Morbi interdum suscipit nisl sed convallis. Aliquam sed finibus augue, quis gravida risus. Maecenas sit amet semper dolor. Nullam orci enim, volutpat in vestibulum vitae, dapibus nec quam. In mollis, nulla a bibendum elementum, sem est iaculis purus, nec condimentum lacus nibh vitae tortor.",
       image: "monOncle.png",
+      svgTitle: ["MON", "ONCLE"],
       links: [
         new LinkData("", LinkTitle.CodePen, LinkIconId.CodePen),
         new LinkData("", LinkTitle.External, LinkIconId.External)
@@ -113,16 +118,18 @@ export default class ItemsWrapper extends Vue {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque placerat ligula dui, at iaculis justo dapibus sed. Fusce a congue urna. Ut ac blandit odio. Sed condimentum lacus non magna tincidunt volutpat. Morbi interdum suscipit nisl sed convallis. Aliquam sed finibus augue, quis gravida risus. Maecenas sit amet semper dolor. Nullam orci enim, volutpat in vestibulum vitae, dapibus nec quam. In mollis, nulla a bibendum elementum, sem est iaculis purus, nec condimentum lacus nibh vitae tortor.",
       image: "beveragesMorph.png",
+      svgTitle: ["BEVERAGES", "MORPH"],
       links: [
         new LinkData("", LinkTitle.CodePen, LinkIconId.CodePen),
         new LinkData("", LinkTitle.External, LinkIconId.External)
       ]
     },
     {
-      title: "UOC Flix",
+      title: "UOCFlix",
       description:
         "Serverless app that fetches the data from the movie database REST API. Pellentesque placerat ligula dui, at iaculis justo dapibus sed. Fusce a congue urna. Ut ac blandit odio. Sed condimentum lacus non magna tincidunt volutpat. Morbi interdum suscipit nisl sed convallis. Aliquam sed finibus augue, quis gravida risus. Maecenas sit amet semper dolor. Nullam orci enim, volutpat in vestibulum vitae, dapibus nec quam. In mollis, nulla a bibendum elementum, sem est iaculis purus, nec condimentum lacus nibh vitae tortor.",
       image: "uocFlix.png",
+      svgTitle: ["UOCFLIX"],
       links: [
         new LinkData("", LinkTitle.CodePen, LinkIconId.CodePen),
         new LinkData("", LinkTitle.External, LinkIconId.External)
