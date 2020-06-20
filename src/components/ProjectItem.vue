@@ -11,7 +11,7 @@
     <span class="offscreen">{{ projectData.title }}</span>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
       <image
-        xlink:href="../assets/roundPicsLayoutThumb.png"
+        :xlink:href="getImgUrl(projectData.image)"
         height="200"
         width="200"
       />
@@ -80,6 +80,14 @@ export default class ProjectItem extends Vue {
   @Emit()
   private makeNotCurrent(): void {
     return;
+  }
+
+  /**
+   * At compile time Webpack will create a context for the url to be resolved at run time.
+   * Use for images with url that needs to be built dynamically.
+   */
+  private getImgUrl(name: string) {
+    return require("../assets/covers/" + name);
   }
 
   private selectItem(): void {

@@ -1,15 +1,19 @@
-import { LinkIconId } from "../enums";
+import { LinkIconId, LinkTitle } from "../enums";
 
 export interface ProjectData {
-  id?: number,
   title: string,
   description: string,
+  image: string,
   links?: Array<LinkData>
 }
 
-interface LinkData {
-  type: string,
-  value: string,
-  title: string,
-  iconId: LinkIconId
+export class LinkData {
+  value: string;
+  title: LinkTitle;
+  iconId: LinkIconId | undefined;
+  constructor(value: string, title: LinkTitle, iconId?: LinkIconId) {
+    this.value = value;
+    this.title = title;
+    this.iconId = iconId;
+  }
 }

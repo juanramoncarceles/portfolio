@@ -1,8 +1,8 @@
 <template>
   <div id="itemsContainer">
     <ProjectItem
-      v-for="data in projectsData"
-      :key="data.id"
+      v-for="(data, i) in projectsData"
+      :key="i"
       :projectData="data"
       :mediaQueryHover="mediaQueryHover"
       @make-current="setItem"
@@ -22,9 +22,9 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-import { ProjectData } from "@/types";
+import { ProjectData, LinkData } from "@/types";
 import ProjectItem from "./ProjectItem.vue";
-import { LinkIconId } from "../enums";
+import { LinkIconId, LinkTitle } from "../enums";
 
 @Component({
   components: {
@@ -37,23 +37,31 @@ export default class ItemsWrapper extends Vue {
   private activeItem: ProjectItem | undefined;
   private projectsData: Array<ProjectData> = [
     {
-      id: 0,
       title: "Round layout",
       description:
         "Images are distributed on a round layout. Selected image is placed in the center. Fusce a congue urna. Ut ac blandit odio. Sed condimentum lacus non magna tincidunt volutpat. Morbi interdum suscipit nisl sed convallis. Aliquam sed finibus augue, quis gravida risus. Maecenas sit amet semper dolor. Nullam orci enim, volutpat in vestibulum vitae, dapibus nec quam. In mollis, nulla a bibendum elementum, sem est iaculis purus, nec condimentum lacus nibh vitae tortor.",
+      image: "roundPicsLayout.png",
       links: [
-        {
-          type: "codepen",
-          value: "",
-          title: "View CodePen",
-          iconId: LinkIconId.CodePen
-        },
-        {
-          type: "project",
-          value: "",
-          title: "View live",
-          iconId: LinkIconId.External
-        }
+        new LinkData("", LinkTitle.CodePen, LinkIconId.CodePen),
+        new LinkData("", LinkTitle.External, LinkIconId.External)
+      ]
+    },
+    {
+      title: "Nutrition facts",
+      description:
+        "Small front-end / serverless app that allows to check food nutrition values. I created all the vector graphics including the UI using SVG. Vanilla JavaScript, SASS, conditional mediaqueries. Responsive SVG user interface. Sed condimentum lacus non magna tincidunt volutpat. Morbi interdum suscipit nisl sed convallis. Aliquam sed finibus augue, quis gravida risus. Maecenas sit amet semper dolor. Nullam orci enim, volutpat in vestibulum vitae, dapibus nec quam. In mollis, nulla a bibendum elementum, sem est iaculis purus, nec condimentum lacus nibh vitae tortor.",
+      image: "nutritionFacts.png",
+      links: [
+        new LinkData(
+          "https://github.com/juanramoncarceles/nutritional-facts",
+          LinkTitle.GitHub,
+          LinkIconId.GitHub
+        ),
+        new LinkData(
+          "https://nutritionfactsapp.ramoncarceles.com",
+          LinkTitle.External,
+          LinkIconId.External
+        )
       ]
     }
   ];
