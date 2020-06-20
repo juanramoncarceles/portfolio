@@ -254,7 +254,7 @@ export default class ProjectItem extends Vue {
       filter: url(#grayscale); /* a svg filter is used because css filters are not supported on svg elements on chrome */
     }
     & > .itemBorder {
-      stroke: rgb(238, 61, 208);
+      stroke: #456e8a; // rgb(238, 61, 208);
       stroke-width: 0px;
       stroke-dasharray: 0px 800px;
       transition: stroke-dasharray 1s ease-in-out, stroke-width 1.5s ease-in-out;
