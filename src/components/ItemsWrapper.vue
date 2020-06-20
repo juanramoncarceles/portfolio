@@ -131,6 +131,17 @@ export default class ItemsWrapper extends Vue {
   private activeItem: ProjectItem | undefined;
   private projectsData: Array<ProjectData> = [
     {
+      title: "BIM Drawings",
+      description:
+        "Master thesis project. App for managing smart drawings of a BIM project. Connected to Google Drive to store. Morbi interdum suscipit nisl sed convallis. Aliquam sed finibus augue, quis gravida risus. Maecenas sit amet semper dolor. Nullam orci enim, volutpat in vestibulum vitae, dapibus nec quam. In mollis, nulla a bibendum elementum, sem est iaculis purus, nec condimentum lacus nibh vitae tortor.",
+      image: "bimDrawings.png",
+      svgTitle: ["BIM", "DRAWINGS"],
+      links: [
+        new LinkData("", LinkTitle.GitHub, LinkIconId.GitHub),
+        new LinkData("", LinkTitle.External, LinkIconId.External)
+      ]
+    },
+    {
       title: "Round layout",
       description:
         "Images are distributed on a round layout. Selected image is placed in the center. Fusce a congue urna. Ut ac blandit odio. Sed condimentum lacus non magna tincidunt volutpat. Morbi interdum suscipit nisl sed convallis. Aliquam sed finibus augue, quis gravida risus. Maecenas sit amet semper dolor. Nullam orci enim, volutpat in vestibulum vitae, dapibus nec quam. In mollis, nulla a bibendum elementum, sem est iaculis purus, nec condimentum lacus nibh vitae tortor.",
