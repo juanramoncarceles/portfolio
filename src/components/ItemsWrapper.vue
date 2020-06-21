@@ -99,8 +99,9 @@
       :key="i"
       :projectData="data"
       :mediaQueryHover="mediaQueryHover"
-      @make-current="setItem"
-      @make-not-current="unsetItem"
+      @make-currently-active="saveActiveItem"
+      @make-not-currently-active="unsetActiveItem"
+      @make-currently-selected="saveSelectedItem"
     />
     <div
       id="bgmask"
@@ -129,6 +130,7 @@ export default class ItemsWrapper extends Vue {
   @Prop() readonly mediaQueryHover!: MediaQueryList;
 
   private activeItem: ProjectItem | undefined;
+  private selectedItem: ProjectItem | undefined;
   private projectsData: Array<ProjectData> = [
     {
       title: "BIM Drawings",
@@ -228,14 +230,21 @@ export default class ItemsWrapper extends Vue {
     }
   ];
 
-  private setItem(item: ProjectItem) {
+  private saveActiveItem(item: ProjectItem) {
     this.activeItem = item;
     (this.$refs.bgmask as HTMLElement).classList.add("active");
   }
 
-  private unsetItem() {
+  private unsetActiveItem() {
     this.activeItem = undefined;
     (this.$refs.bgmask as HTMLElement).classList.remove("active");
+  }
+
+  private saveSelectedItem(item: ProjectItem) {
+    if (this.selectedItem) {
+      this.selectedItem.deselectItem();
+    }
+    this.selectedItem = item;
   }
 }
 </script>

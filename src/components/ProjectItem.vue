@@ -79,13 +79,18 @@ export default class ProjectItem extends Vue {
   };
 
   @Emit()
-  private makeCurrent(): ProjectItem {
+  private makeCurrentlyActive(): ProjectItem {
     return this;
   }
 
   @Emit()
-  private makeNotCurrent(): void {
+  private makeNotCurrentlyActive(): void {
     return;
+  }
+
+  @Emit()
+  private makeCurrentlySelected() {
+    return this;
   }
 
   /**
@@ -101,7 +106,7 @@ export default class ProjectItem extends Vue {
     this.isSelected = true;
   }
 
-  private deselectItem(): void {
+  deselectItem(): void {
     console.log("Deselected");
     this.isSelected = false;
   }
@@ -170,7 +175,7 @@ export default class ProjectItem extends Vue {
       else this.infoContainerStyle.top = "100%";
     }, 500);
     // Emits an event to the parent telling that it is the current item.
-    this.makeCurrent();
+    this.makeCurrentlyActive();
   }
 
   /**
@@ -182,7 +187,7 @@ export default class ProjectItem extends Vue {
     this.infoContainerStyle.top = "0";
     this.itemContainerStyle.transform = `translate(0px,0px) scale(1)`;
     // Emits an event to the parent telling that it is not the current item.
-    this.makeNotCurrent();
+    this.makeNotCurrentlyActive();
   }
 
   /**
@@ -221,18 +226,9 @@ export default class ProjectItem extends Vue {
           this.activateItem();
           this.deselectItem();
         } else {
-          // Set as selected and deselect any other that is selected.
-          console.log("TODO");
-          // for (let j = 0; j < itemsContainer.children.length; j++) {
-          //   // If the item is the one with the buttons then skip it.
-          //   if (itemsContainer.children[j].id === "coverButtons") continue;
-          //   if (i !== j) {
-          //     // Another option e.target.id !== itemsContainer.children[j].id
-          //     deselectItem(itemsContainer.children[j]);
-          //   } else {
-          //     selectItem(itemsContainer.children[i]);
-          //   }
-          // }
+          this.selectItem();
+          // Emit to save a reference in the parent and unselect any other that might be selected.
+          this.makeCurrentlySelected();
         }
       }
     }
