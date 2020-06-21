@@ -19,7 +19,7 @@
       <text class="itemTitle">
         <tspan
           x="10"
-          :y="190 - (projectData.svgTitle.length - 1 - i) * 30"
+          :y="190 - (projectData.svgTitle.length - 1 - i) * 26"
           v-for="(strFragment, i) in projectData.svgTitle"
           :key="i"
         >
@@ -65,7 +65,8 @@ export default class ProjectItem extends Vue {
 
   private isSelected = false;
   private isActive = false;
-  private activeItemMaxDimension = 780;
+  private activeItemMaxDimension = 1000;
+  private fontBaseSize = 18;
   private itemContainerStyle = {
     transform: "unset",
     transitionDelay: "0s",
@@ -137,7 +138,8 @@ export default class ProjectItem extends Vue {
       scaleValue = this.activeItemMaxDimension / (itemWidth * 2);
       finalX = window.innerWidth / 2 - (itemWidth * scaleValue) / 2;
       finalY = window.innerHeight / 2;
-      this.infoContainerStyle.fontSize = (1 / scaleValue) * 16 + "px";
+      this.infoContainerStyle.fontSize =
+        (1 / scaleValue) * this.fontBaseSize + "px";
     } else if (window.innerWidth / window.innerHeight >= 1) {
       // Horizontal or square and smaller
       horizontal = true;
@@ -145,7 +147,7 @@ export default class ProjectItem extends Vue {
       finalX = window.innerWidth / 2 - (itemWidth * scaleValue) / 2;
       finalY = window.innerHeight / 2;
       this.infoContainerStyle.fontSize =
-        ((1 / scaleValue) * 16 * window.innerWidth) /
+        ((1 / scaleValue) * this.fontBaseSize * window.innerWidth) /
           this.activeItemMaxDimension +
         "px";
     } else if (window.innerHeight >= this.activeItemMaxDimension) {
@@ -154,7 +156,8 @@ export default class ProjectItem extends Vue {
       scaleValue = this.activeItemMaxDimension / (itemWidth * 2);
       finalX = window.innerWidth / 2;
       finalY = window.innerHeight / 2 - (itemHeight * scaleValue) / 2;
-      this.infoContainerStyle.fontSize = (1 / scaleValue) * 16 + "px";
+      this.infoContainerStyle.fontSize =
+        (1 / scaleValue) * this.fontBaseSize + "px";
     } else if (window.innerWidth / window.innerHeight < 1) {
       // Vertical and smaller
       horizontal = false;
@@ -162,7 +165,7 @@ export default class ProjectItem extends Vue {
       finalX = window.innerWidth / 2;
       finalY = window.innerHeight / 2 - (itemHeight * scaleValue) / 2;
       this.infoContainerStyle.fontSize =
-        ((1 / scaleValue) * 16 * window.innerHeight) /
+        ((1 / scaleValue) * this.fontBaseSize * window.innerHeight) /
           this.activeItemMaxDimension +
         "px";
     }
@@ -263,7 +266,7 @@ export default class ProjectItem extends Vue {
       stroke-dasharray: 0px, 120px;
       filter: url(#drop-shadow);
       font-size: 28px;
-      font-family: sans-serif;
+      font-family: "Raleway", sans-serif;
       transition-property: stroke-dasharray, stroke-width, fill-opacity;
       transition-delay: 0s, 1s, 1s;
       transition-duration: 1.5s, 0.5s, 0.5s;
@@ -323,12 +326,13 @@ export default class ProjectItem extends Vue {
     & > h2 {
       text-align: center;
       margin: 0 1.2em 0.5em;
-      font-size: 1.8em;
+      font-family: "Raleway", sans-serif;
+      font-size: 2em;
     }
     & > p {
-      text-align: justify;
-      font-family: "Bellota Text", sans-serif;
-      font-size: 1em;
+      text-align: center;
+      font-family: serif;
+      font-size: 1.2em;
     }
   }
   & > div:last-child {

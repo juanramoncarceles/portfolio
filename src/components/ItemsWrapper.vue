@@ -42,7 +42,7 @@
           <line x1="136" x2="180" y2="90" />
         </g>
         <g
-          style="fill:#191919;stroke:#3c3c3c;stroke-miterlimit:10;stroke-width:2px"
+          style="fill:none;stroke:#3c3c3c;stroke-linejoin:bevel;stroke-miterlimit:0;stroke-width:2px"
         >
           <path d="M226,45h-4a9,9,0,0,0,0,18h4Z" />
           <path d="M226,81h4a9,9,0,0,0,0-18h-4Z" />
@@ -137,7 +137,7 @@ export default class ItemsWrapper extends Vue {
       description:
         "Master thesis project. App for managing smart drawings of a BIM project. Connected to Google Drive to store. Morbi interdum suscipit nisl sed convallis. Aliquam sed finibus augue, quis gravida risus. Maecenas sit amet semper dolor. Nullam orci enim, volutpat in vestibulum vitae, dapibus nec quam. In mollis, nulla a bibendum elementum, sem est iaculis purus, nec condimentum lacus nibh vitae tortor.",
       image: "bimDrawings.png",
-      svgTitle: ["BIM", "DRAWINGS"],
+      svgTitle: ["BIM", "Drawings"],
       links: [
         new LinkData("", LinkTitle.GitHub, LinkIconId.GitHub),
         new LinkData("", LinkTitle.External, LinkIconId.External)
@@ -148,7 +148,7 @@ export default class ItemsWrapper extends Vue {
       description:
         "Images are distributed on a round layout. Selected image is placed in the center. Fusce a congue urna. Ut ac blandit odio. Sed condimentum lacus non magna tincidunt volutpat. Morbi interdum suscipit nisl sed convallis. Aliquam sed finibus augue, quis gravida risus. Maecenas sit amet semper dolor. Nullam orci enim, volutpat in vestibulum vitae, dapibus nec quam. In mollis, nulla a bibendum elementum, sem est iaculis purus, nec condimentum lacus nibh vitae tortor.",
       image: "roundPicsLayout.png",
-      svgTitle: ["ROUND", "LAYOUT"],
+      svgTitle: ["Round", "layout"],
       links: [
         new LinkData("", LinkTitle.CodePen, LinkIconId.CodePen),
         new LinkData("", LinkTitle.External, LinkIconId.External)
@@ -159,7 +159,7 @@ export default class ItemsWrapper extends Vue {
       description:
         "Small front-end / serverless app that allows to check food nutrition values. I created all the vector graphics including the UI using SVG. Vanilla JavaScript, SASS, conditional mediaqueries. Responsive SVG user interface. Sed condimentum lacus non magna tincidunt volutpat. Morbi interdum suscipit nisl sed convallis. Aliquam sed finibus augue, quis gravida risus. Maecenas sit amet semper dolor. Nullam orci enim, volutpat in vestibulum vitae, dapibus nec quam. In mollis, nulla a bibendum elementum, sem est iaculis purus, nec condimentum lacus nibh vitae tortor.",
       image: "nutritionFacts.png",
-      svgTitle: ["NUTRITION", "FACTS"],
+      svgTitle: ["Nutrition", "facts"],
       links: [
         new LinkData(
           "https://github.com/juanramoncarceles/nutritional-facts",
@@ -178,7 +178,7 @@ export default class ItemsWrapper extends Vue {
       description:
         "Small excercise animating a single SVG symbol which is then created and moved randomly with the <use> element. Morbi interdum suscipit nisl sed convallis. Aliquam sed finibus augue, quis gravida risus. Maecenas sit amet semper dolor. Nullam orci enim, volutpat in vestibulum vitae, dapibus nec quam. In mollis, nulla a bibendum elementum, sem est iaculis purus, nec condimentum lacus nibh vitae tortor.",
       image: "flyingBirds.png",
-      svgTitle: ["FLYING", "BIRDS"],
+      svgTitle: ["Flying", "birds"],
       links: [
         new LinkData("", LinkTitle.CodePen, LinkIconId.CodePen),
         new LinkData("", LinkTitle.External, LinkIconId.External)
@@ -189,7 +189,7 @@ export default class ItemsWrapper extends Vue {
       description:
         "Green Sock SVG animations of existing logos. Pellentesque placerat ligula dui, at iaculis justo dapibus sed. Fusce a congue urna. Ut ac blandit odio. Sed condimentum lacus non magna tincidunt volutpat. Morbi interdum suscipit nisl sed convallis. Aliquam sed finibus augue, quis gravida risus. Maecenas sit amet semper dolor. Nullam orci enim, volutpat in vestibulum vitae, dapibus nec quam. In mollis, nulla a bibendum elementum, sem est iaculis purus, nec condimentum lacus nibh vitae tortor.",
       image: "logoAnimations.png",
-      svgTitle: ["LOGO", "ANIMATIONS"],
+      svgTitle: ["Logo", "animations"],
       links: [
         new LinkData("", LinkTitle.CodePen, LinkIconId.CodePen),
         new LinkData("", LinkTitle.CodePen, LinkIconId.CodePen)
@@ -200,7 +200,7 @@ export default class ItemsWrapper extends Vue {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque placerat ligula dui, at iaculis justo dapibus sed. Fusce a congue urna. Ut ac blandit odio. Sed condimentum lacus non magna tincidunt volutpat. Morbi interdum suscipit nisl sed convallis. Aliquam sed finibus augue, quis gravida risus. Maecenas sit amet semper dolor. Nullam orci enim, volutpat in vestibulum vitae, dapibus nec quam. In mollis, nulla a bibendum elementum, sem est iaculis purus, nec condimentum lacus nibh vitae tortor.",
       image: "monOncle.png",
-      svgTitle: ["MON", "ONCLE"],
+      svgTitle: ["Mon", "Oncle"],
       links: [
         new LinkData("", LinkTitle.CodePen, LinkIconId.CodePen),
         new LinkData("", LinkTitle.External, LinkIconId.External)
@@ -211,7 +211,7 @@ export default class ItemsWrapper extends Vue {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque placerat ligula dui, at iaculis justo dapibus sed. Fusce a congue urna. Ut ac blandit odio. Sed condimentum lacus non magna tincidunt volutpat. Morbi interdum suscipit nisl sed convallis. Aliquam sed finibus augue, quis gravida risus. Maecenas sit amet semper dolor. Nullam orci enim, volutpat in vestibulum vitae, dapibus nec quam. In mollis, nulla a bibendum elementum, sem est iaculis purus, nec condimentum lacus nibh vitae tortor.",
       image: "beveragesMorph.png",
-      svgTitle: ["BEVERAGES", "MORPH"],
+      svgTitle: ["Beverages", "morph"],
       links: [
         new LinkData("", LinkTitle.CodePen, LinkIconId.CodePen),
         new LinkData("", LinkTitle.External, LinkIconId.External)
@@ -222,7 +222,7 @@ export default class ItemsWrapper extends Vue {
       description:
         "Serverless app that fetches the data from the movie database REST API. Pellentesque placerat ligula dui, at iaculis justo dapibus sed. Fusce a congue urna. Ut ac blandit odio. Sed condimentum lacus non magna tincidunt volutpat. Morbi interdum suscipit nisl sed convallis. Aliquam sed finibus augue, quis gravida risus. Maecenas sit amet semper dolor. Nullam orci enim, volutpat in vestibulum vitae, dapibus nec quam. In mollis, nulla a bibendum elementum, sem est iaculis purus, nec condimentum lacus nibh vitae tortor.",
       image: "uocFlix.png",
-      svgTitle: ["UOCFLIX"],
+      svgTitle: ["UOCFlix"],
       links: [
         new LinkData("", LinkTitle.CodePen, LinkIconId.CodePen),
         new LinkData("", LinkTitle.External, LinkIconId.External)
@@ -270,7 +270,7 @@ export default class ItemsWrapper extends Vue {
 #profile-links {
   padding: 0;
   margin: 1.8rem 0 0 4rem;
-  line-height: 2rem;
+  line-height: 1.8rem;
   list-style-type: none;
 }
 
@@ -294,7 +294,7 @@ export default class ItemsWrapper extends Vue {
 }
 
 #bgmask {
-  position: absolute;
+  position: fixed;
   height: 0;
   width: 100vw;
   left: 0;

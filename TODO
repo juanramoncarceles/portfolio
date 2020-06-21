@@ -1,11 +1,13 @@
 ☐ Add <transition> to items for initial transition.
 
-☐ Set font on info container title.
-
 ☐ Finish CSS for the smallest screen, when the profile is above the grid.
 
-☐ Links on profile should become smaller on small screen.
+☐ Links on profile should become smaller on small screen. Or make all the cover as SVG so it is responsive.
 
-☐ Remove gray fill from logo letters?
+☐ Select faster but with initial delay, only when there is no hover.
 
+☐ Make covers of 500px.
+
+✔ Set font on info container title. @done(20-06-21 20:54)
+✔ Remove gray fill from logo letters? @done(20-06-21 20:54)
 ✔ Finish the logic when there is no hover. @done(20-06-21 17:47)
