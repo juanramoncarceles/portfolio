@@ -1,7 +1,7 @@
 <template>
   <div id="itemsContainer">
     <div id="profile">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 90">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250">
         <defs>
           <radialGradient
             id="myGradient"
@@ -63,36 +63,25 @@
             style="fill: #36566b;"
           />
         </g>
+        <text y="112" id="subtitle">
+          <tspan x="240">front-end</tspan>
+          <tspan x="240" dy="24">developer</tspan>
+        </text>
+        <g id="profile-links">
+          <a href="cv/index.html" target="_blank">
+            <text y="175" x="35">curriculum</text>
+          </a>
+          <a href="https://github.com/juanramoncarceles" target="_blank">
+            <text y="195" x="35">github</text>
+          </a>
+          <a href="https://www.linkedin.com/in/ramoncarceles/" target="_blank">
+            <text y="215" x="35">linkedin</text>
+          </a>
+          <a href="https://codepen.io/jrcr" target="_blank">
+            <text y="235" x="35">codepen</text>
+          </a>
+        </g>
       </svg>
-      <span class="subtitle">front-end<br />developer</span>
-      <ul id="profile-links">
-        <li>
-          <a href="cv/index.html" class="profile-link" target="_blank"
-            >curriculum</a
-          >
-        </li>
-        <li>
-          <a
-            href="https://github.com/juanramoncarceles"
-            class="profile-link"
-            target="_blank"
-            >github</a
-          >
-        </li>
-        <li>
-          <a
-            href="https://www.linkedin.com/in/ramoncarceles/"
-            class="profile-link"
-            target="_blank"
-            >linkedin</a
-          >
-        </li>
-        <li>
-          <a href="https://codepen.io/jrcr" class="profile-link" target="_blank"
-            >codepen</a
-          >
-        </li>
-      </ul>
     </div>
     <ProjectItem
       v-for="(data, i) in projectsData"
@@ -268,29 +257,19 @@ export default class ItemsWrapper extends Vue {
 }
 
 #profile-links {
-  padding: 0;
-  margin: 1.8rem 0 0 4rem;
-  line-height: 1.8rem;
-  list-style-type: none;
-}
-
-.profile-link {
-  font-size: 1.4rem;
+  font-size: 16px;
   font-weight: 400;
-  color: #666;
-  &:hover {
-    color: var(--theme-color);
+  fill: #666;
+  & > a:hover {
+    fill: var(--theme-color);
   }
 }
 
-#profile > .subtitle {
-  margin-right: 1.6rem;
-  margin-top: 1rem;
-  line-height: 2.8rem;
-  text-align: right;
-  font-size: 3rem;
+#subtitle {
+  text-anchor: end;
+  font-size: 26px;
   font-weight: 700;
-  color: var(--theme-color);
+  fill: var(--theme-color);
 }
 
 #bgmask {

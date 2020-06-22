@@ -2,12 +2,11 @@
 
 ☐ Finish CSS for the smallest screen, when the profile is above the grid.
 
-☐ Links on profile should become smaller on small screen. Or make all the cover as SVG so it is responsive.
-
 ☐ Select faster but with initial delay, only when there is no hover.
 
 ☐ Make covers of 500px.
 
+✔ Links on profile should become smaller on small screen. Or make all the cover as SVG so it is responsive. @done(20-06-22 20:41)
 ✔ Set font on info container title. @done(20-06-21 20:54)
 ✔ Remove gray fill from logo letters? @done(20-06-21 20:54)
 ✔ Finish the logic when there is no hover. @done(20-06-21 17:47)
