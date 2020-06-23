@@ -242,18 +242,17 @@ export default class ItemsWrapper extends Vue {
 #itemsContainer {
   display: grid;
   max-width: 1300px;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   margin: auto;
-  &.small-screen {
-    padding-top: 100vw;
-  }
 }
 
 #profile {
-  display: flex;
-  flex-direction: column;
+  grid-area: 1 / 1 / 3 / 3;
   font-family: "Raleway", sans-serif;
   --theme-color: #456e8a;
+  & > svg {
+    display: block;
+  }
 }
 
 #profile-links {
