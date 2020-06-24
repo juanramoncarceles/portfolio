@@ -1,0 +1,118 @@
+{
+  "sections": [
+    {
+      "title": "Educación",
+      "items": [
+        {
+          "period": {
+            "start": "Sep 2017",
+            "end": "Jun 2020"
+          },
+          "title": "Máster en Aplicaciones Multimedia (78 ECTS)",
+          "subtitle": "Universitat Oberta de Catalunya",
+          "details": [
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "period": {
+            "start": "Sep 2013",
+            "end": "Jul 2014"
+          },
+          "title": "Estudios de arquitectura en Italia",
+          "subtitle": "Politecnico di Milano",
+          "details": [
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "period": {
+            "start": "Sep 2009",
+            "end": "Feb 2016"
+          },
+          "title": "Grado en arquitectura (330 ECTS)",
+          "subtitle": "Universitat de Girona",
+          "details": [
+            "",
+            "",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Experiencia",
+      "items": [
+        {
+          "period": {
+            "start": "Nov 2018",
+            "end": "Current"
+          },
+          "title": "Product Manager VisualARQ",
+          "subtitle": "Asuni Soft (Barcelona)",
+          "details": [
+            "Tech support",
+            "Software demonstrations",
+            "Product management: test, analysis...",
+            "Email campaing preparation / maquetacion"
+          ]
+        },
+        {
+          "period": {
+            "start": "Jun 2017",
+            "end": "Sep 2018"
+          },
+          "title": "Arquitecto",
+          "subtitle": "Disseny, Arquitectura i Urbanisme (Girona)",
+          "details": [
+            "Desarrollo de proyectos residenciales, desde el concepto hasta la visita de obra",
+            "Redacción de proyectos ejecutivos, detalles constructivos, presupuestos..."
+          ]
+        },
+        {
+          "period": {
+            "start": "Nov 2016",
+            "end": "May 2017"
+          },
+          "title": "Arquitecto",
+          "subtitle": "MOKE Architecten (Ámsterdam)",
+          "details": [
+            "Desarrollo de proyectos y estudios de viavilidad residenciales.",
+            "Modelado 3D e infografía arquitectónica."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Habilidades",
+      "items": [
+        {
+          "title": "Software",
+          "items": [
+            "HTML & SVG",
+            "CSS & SASS",
+            "JavaScript",
+            "ReactJS",
+            "TypeScript",
+            "Git - GitHub",
+            "NodeJS",
+            "Google API",
+            "Firebase"
+          ]
+        },
+        {
+          "title": "Idiomas",
+          "items": [
+            "Español",
+            "Inglés (B2.1)",
+            "Italiano (C1)"
+          ]
+        }
+      ]
+    }
+  ]
+}
