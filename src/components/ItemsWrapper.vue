@@ -124,7 +124,8 @@ export default class ItemsWrapper extends Vue {
     {
       title: "BIM Drawings",
       description:
-        "Master thesis project. App for managing smart drawings of a BIM project. Connected to Google Drive to store. Morbi interdum suscipit nisl sed convallis. Aliquam sed finibus augue, quis gravida risus. Maecenas sit amet semper dolor. Nullam orci enim, volutpat in vestibulum vitae, dapibus nec quam. In mollis, nulla a bibendum elementum, sem est iaculis purus, nec condimentum lacus nibh vitae tortor.",
+        "Master's thesis project. App for managing documentation of BIM projects. The core idea are the smart drawings, which are building blueprints with attached BIM data. It is possible to check the data of a building element in the drawing, to add comments to them and tag collaborators, and to mesure distances, angles and areas. It is a serverless app connected to Google Drive to allow to store data and collaborate, and Firebase for cloud messaging. An exporter is required for each target platform to generate a file with all the data.",
+      // tags: ["SVG", "TypeScript", "Google API", "Firebase"],
       image: "bimDrawings.png",
       svgTitle: ["BIM", "Drawings"],
       links: [
@@ -146,7 +147,7 @@ export default class ItemsWrapper extends Vue {
     {
       title: "Nutrition facts",
       description:
-        "Small front-end / serverless app that allows to check food nutrition values. I created all the vector graphics including the UI using SVG. Vanilla JavaScript, SASS, conditional mediaqueries. Responsive SVG user interface. Sed condimentum lacus non magna tincidunt volutpat. Morbi interdum suscipit nisl sed convallis. Aliquam sed finibus augue, quis gravida risus. Maecenas sit amet semper dolor. Nullam orci enim, volutpat in vestibulum vitae, dapibus nec quam. In mollis, nulla a bibendum elementum, sem est iaculis purus, nec condimentum lacus nibh vitae tortor.",
+        "Small front-end app that allows to check food nutrition values. I created all the vector graphics including the user interface using SVG produced with Illustrator and Inkscape. It is connected to a Google spreadsheet where the food items data is stored. Logic is all Vanilla JavaScript, styles with SASS and responsive SVG user interface with conditional mediaqueries.",
       image: "nutritionFacts.png",
       svgTitle: ["Nutrition", "facts"],
       links: [
@@ -165,7 +166,7 @@ export default class ItemsWrapper extends Vue {
     {
       title: "Flying birds",
       description:
-        "Small excercise animating a single SVG symbol which is then created and moved randomly with the <use> element. Morbi interdum suscipit nisl sed convallis. Aliquam sed finibus augue, quis gravida risus. Maecenas sit amet semper dolor. Nullam orci enim, volutpat in vestibulum vitae, dapibus nec quam. In mollis, nulla a bibendum elementum, sem est iaculis purus, nec condimentum lacus nibh vitae tortor.",
+        "Small excercise animating a single SVG symbol which is then attached randonmly as a shadow dom element with a random generator of <use> element. Once it has passed the right side it is deleted to avoid the DOM gronwing excessively. Since a single SVG symbol is used the movement is shared among all the birds and properties like scale and fill color can be set differently by instance.",
       image: "flyingBirds.png",
       svgTitle: ["Flying", "birds"],
       links: [
@@ -176,7 +177,7 @@ export default class ItemsWrapper extends Vue {
     {
       title: "Logo animations",
       description:
-        "Green Sock SVG animations of existing logos. Pellentesque placerat ligula dui, at iaculis justo dapibus sed. Fusce a congue urna. Ut ac blandit odio. Sed condimentum lacus non magna tincidunt volutpat. Morbi interdum suscipit nisl sed convallis. Aliquam sed finibus augue, quis gravida risus. Maecenas sit amet semper dolor. Nullam orci enim, volutpat in vestibulum vitae, dapibus nec quam. In mollis, nulla a bibendum elementum, sem est iaculis purus, nec condimentum lacus nibh vitae tortor.",
+        "Green Sock SVG animations of existing logos from Lands Design and VisualARQ. Properties like stroke dasharray, linear gradient ... are animated .  Also the GSAP morph plugin in the case of Lands Design to achieve the transition from a leaf to all the letters. Original SVG drawings were redone with Inkscape to have the right structre for the animation to be possible.",
       image: "logoAnimations.png",
       svgTitle: ["Logo", "animations"],
       links: [
@@ -187,7 +188,7 @@ export default class ItemsWrapper extends Vue {
     {
       title: "Mon Oncle",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque placerat ligula dui, at iaculis justo dapibus sed. Fusce a congue urna. Ut ac blandit odio. Sed condimentum lacus non magna tincidunt volutpat. Morbi interdum suscipit nisl sed convallis. Aliquam sed finibus augue, quis gravida risus. Maecenas sit amet semper dolor. Nullam orci enim, volutpat in vestibulum vitae, dapibus nec quam. In mollis, nulla a bibendum elementum, sem est iaculis purus, nec condimentum lacus nibh vitae tortor.",
+        "Interactive scene of the movie Mon Oncle by Jacques Tati. SVG created with Illustrator. A mix of CSS animations is used for continuous background elements and JavaScript for interactive elements.",
       image: "monOncle.png",
       svgTitle: ["Mon", "Oncle"],
       links: [
@@ -198,7 +199,7 @@ export default class ItemsWrapper extends Vue {
     {
       title: "Beverages morph",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque placerat ligula dui, at iaculis justo dapibus sed. Fusce a congue urna. Ut ac blandit odio. Sed condimentum lacus non magna tincidunt volutpat. Morbi interdum suscipit nisl sed convallis. Aliquam sed finibus augue, quis gravida risus. Maecenas sit amet semper dolor. Nullam orci enim, volutpat in vestibulum vitae, dapibus nec quam. In mollis, nulla a bibendum elementum, sem est iaculis purus, nec condimentum lacus nibh vitae tortor.",
+        "Transition between different animated beverages and some data associated. The idea was to create a dynamic menu. Nullam orci enim, volutpat in vestibulum vitae, dapibus nec quam. In mollis, nulla a bibendum elementum, sem est iaculis purus, nec condimentum lacus nibh vitae tortor.",
       image: "beveragesMorph.png",
       svgTitle: ["Beverages", "morph"],
       links: [
@@ -209,9 +210,42 @@ export default class ItemsWrapper extends Vue {
     {
       title: "UOCFlix",
       description:
-        "Serverless app that fetches the data from the movie database REST API. Pellentesque placerat ligula dui, at iaculis justo dapibus sed. Fusce a congue urna. Ut ac blandit odio. Sed condimentum lacus non magna tincidunt volutpat. Morbi interdum suscipit nisl sed convallis. Aliquam sed finibus augue, quis gravida risus. Maecenas sit amet semper dolor. Nullam orci enim, volutpat in vestibulum vitae, dapibus nec quam. In mollis, nulla a bibendum elementum, sem est iaculis purus, nec condimentum lacus nibh vitae tortor.",
+        "Serverless app that fetches the data from the movie database REST API. PWA that can be installed. Fusce a congue urna. Ut ac blandit odio. Sed condimentum lacus non magna tincidunt volutpat. Morbi interdum suscipit nisl sed convallis. Aliquam sed finibus augue, quis gravida risus. Maecenas sit amet semper dolor. Nullam orci enim, volutpat in vestibulum vitae, dapibus nec quam. In mollis, nulla a bibendum elementum, sem est iaculis purus, nec condimentum lacus nibh vitae tortor.",
       image: "uocFlix.png",
       svgTitle: ["UOCFlix"],
+      links: [
+        new LinkData("", LinkTitle.CodePen, LinkIconId.CodePen),
+        new LinkData("", LinkTitle.External, LinkIconId.External)
+      ]
+    },
+    {
+      title: "Language tooltip",
+      description:
+        "Laguage tooltip to be added to an existing multilanguage web site like a WordPress site that uses an url pattern like www.example.com/lang/restofpath. The goal is to advise that the site is available in the browser language and if the user takes a decision it is stored by a cookie and used to redirect automatically to the desired language. Tooltip can be positioned relative to an existing element or centered.",
+      image: "uocFlix.png",
+      svgTitle: ["Language", "tooltip"],
+      links: [
+        new LinkData("", LinkTitle.CodePen, LinkIconId.CodePen),
+        new LinkData("", LinkTitle.External, LinkIconId.External)
+      ]
+    },
+    {
+      title: "User votes emailing",
+      description:
+        "App designed to help with the task of sending emails to a set of users that have asked something at some time. When the time comes and all the users should be notified it reads the Google spreadsheet prepares the emails and after the confirmation it sends them. It uses Nodemailer and Pug.",
+      image: "uocFlix.png",
+      svgTitle: ["User", "votes", "emailing"],
+      links: [
+        new LinkData("", LinkTitle.CodePen, LinkIconId.CodePen),
+        new LinkData("", LinkTitle.External, LinkIconId.External)
+      ]
+    },
+    {
+      title: "News portal",
+      description:
+        "Master's back-end course project of a news portal. Laravel app with Vue front-end, Laravel creates the REST API.",
+      image: "uocFlix.png",
+      svgTitle: ["News", "portal"],
       links: [
         new LinkData("", LinkTitle.CodePen, LinkIconId.CodePen),
         new LinkData("", LinkTitle.External, LinkIconId.External)
