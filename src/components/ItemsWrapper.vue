@@ -129,8 +129,16 @@ export default class ItemsWrapper extends Vue {
       image: "bimDrawings.png",
       svgTitle: ["BIM", "Drawings"],
       links: [
-        new LinkData("", LinkTitle.GitHub, LinkIconId.GitHub),
-        new LinkData("", LinkTitle.External, LinkIconId.External)
+        new LinkData(
+          "https://github.com/juanramoncarceles/bim-drawings",
+          LinkTitle.GitHub,
+          LinkIconId.GitHub
+        ),
+        new LinkData(
+          "https://bimdrawings.ramoncarceles.com/",
+          LinkTitle.External,
+          LinkIconId.External
+        )
       ]
     },
     {
@@ -181,16 +189,34 @@ export default class ItemsWrapper extends Vue {
       image: "logoAnimations.png",
       svgTitle: ["Logo", "animations"],
       links: [
-        new LinkData("", LinkTitle.CodePen, LinkIconId.CodePen),
-        new LinkData("", LinkTitle.CodePen, LinkIconId.CodePen)
+        new LinkData(
+          "https://codepen.io/jrcr/pen/wvwZYRb",
+          LinkTitle.CodePen,
+          LinkIconId.CodePen
+        ),
+        new LinkData(
+          "https://codepen.io/jrcr/pen/WVEzoZ",
+          LinkTitle.CodePen,
+          LinkIconId.CodePen
+        )
       ]
     },
+    // {
+    //   title: "Mon Oncle",
+    //   description:
+    //     "Interactive scene of the movie Mon Oncle by Jacques Tati. SVG created with Illustrator. A mix of CSS animations is used for continuous background elements and JavaScript for interactive elements.",
+    //   image: "monOncle.png",
+    //   svgTitle: ["Mon", "Oncle"],
+    //   links: [
+    //     new LinkData("", LinkTitle.CodePen, LinkIconId.CodePen),
+    //     new LinkData("", LinkTitle.External, LinkIconId.External)
+    //   ]
+    // },
     {
-      title: "Mon Oncle",
-      description:
-        "Interactive scene of the movie Mon Oncle by Jacques Tati. SVG created with Illustrator. A mix of CSS animations is used for continuous background elements and JavaScript for interactive elements.",
+      title: "Split App",
+      description: "App to add expenses and split.",
       image: "monOncle.png",
-      svgTitle: ["Mon", "Oncle"],
+      svgTitle: ["Split", "App"],
       links: [
         new LinkData("", LinkTitle.CodePen, LinkIconId.CodePen),
         new LinkData("", LinkTitle.External, LinkIconId.External)
@@ -203,8 +229,16 @@ export default class ItemsWrapper extends Vue {
       image: "beveragesMorph.png",
       svgTitle: ["Beverages", "morph"],
       links: [
-        new LinkData("", LinkTitle.CodePen, LinkIconId.CodePen),
-        new LinkData("", LinkTitle.External, LinkIconId.External)
+        new LinkData(
+          "https://github.com/juanramoncarceles/beverages-animation",
+          LinkTitle.GitHub,
+          LinkIconId.GitHub
+        ),
+        new LinkData(
+          "https://juanramoncarceles.github.io/beverages-animation/",
+          LinkTitle.External,
+          LinkIconId.External
+        )
       ]
     },
     {
@@ -214,8 +248,16 @@ export default class ItemsWrapper extends Vue {
       image: "uocFlix.png",
       svgTitle: ["UOCFlix"],
       links: [
-        new LinkData("", LinkTitle.CodePen, LinkIconId.CodePen),
-        new LinkData("", LinkTitle.External, LinkIconId.External)
+        new LinkData(
+          "https://github.com/juanramoncarceles/uoc-flix",
+          LinkTitle.GitHub,
+          LinkIconId.GitHub
+        ),
+        new LinkData(
+          "https://juanramoncarceles.github.io/uoc-flix/",
+          LinkTitle.External,
+          LinkIconId.External
+        )
       ]
     },
     {
@@ -225,15 +267,19 @@ export default class ItemsWrapper extends Vue {
       image: "uocFlix.png",
       svgTitle: ["Language", "tooltip"],
       links: [
-        new LinkData("", LinkTitle.CodePen, LinkIconId.CodePen),
-        new LinkData("", LinkTitle.External, LinkIconId.External)
+        new LinkData(
+          "https://github.com/juanramoncarceles/language-tooltip",
+          LinkTitle.GitHub,
+          LinkIconId.GitHub
+        )
+        // new LinkData("", LinkTitle.External, LinkIconId.External)
       ]
     },
     {
       title: "User votes emailing",
       description:
         "App designed to help with the task of sending emails to a set of users that have asked something at some time. When the time comes and all the users should be notified it reads the Google spreadsheet prepares the emails and after the confirmation it sends them. It uses Nodemailer and Pug.",
-      image: "uocFlix.png",
+      image: "usersVotesReport.png",
       svgTitle: ["User", "votes", "emailing"],
       links: [
         new LinkData("", LinkTitle.CodePen, LinkIconId.CodePen),
@@ -247,8 +293,12 @@ export default class ItemsWrapper extends Vue {
       image: "uocFlix.png",
       svgTitle: ["News", "portal"],
       links: [
-        new LinkData("", LinkTitle.CodePen, LinkIconId.CodePen),
-        new LinkData("", LinkTitle.External, LinkIconId.External)
+        new LinkData(
+          "https://github.com/juanramoncarceles/laravel-vue-exercise",
+          LinkTitle.GitHub,
+          LinkIconId.GitHub
+        )
+        // new LinkData("", LinkTitle.External, LinkIconId.External)
       ]
     }
   ];
