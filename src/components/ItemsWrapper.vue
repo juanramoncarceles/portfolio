@@ -69,7 +69,7 @@
         </text>
         <g id="profile-links">
           <a href="cv/index.html" target="_blank">
-            <text y="175" x="35">curriculum</text>
+            <text y="175" x="35">resume</text>
           </a>
           <a href="https://github.com/juanramoncarceles" target="_blank">
             <text y="195" x="35">github</text>
@@ -144,7 +144,7 @@ export default class ItemsWrapper extends Vue {
     {
       title: "Round layout",
       description:
-        "Images are distributed on a round layout. Selected image is placed in the center. Fusce a congue urna. Ut ac blandit odio. Sed condimentum lacus non magna tincidunt volutpat. Morbi interdum suscipit nisl sed convallis. Aliquam sed finibus augue, quis gravida risus. Maecenas sit amet semper dolor. Nullam orci enim, volutpat in vestibulum vitae, dapibus nec quam. In mollis, nulla a bibendum elementum, sem est iaculis purus, nec condimentum lacus nibh vitae tortor.",
+        "System to distribute a set of images in a round layout. On hover over an image it grows and if selected it is placed in the center.\n It was developed as a part of a bigger application, an with the idea to make it possible to be integrated in any project. Currently it is a work in progress.",
       image: "roundPicsLayout.png",
       svgTitle: ["Round", "layout"],
       links: [
@@ -155,7 +155,7 @@ export default class ItemsWrapper extends Vue {
     {
       title: "Nutrition facts",
       description:
-        "Small front-end app that allows to check food nutrition values. I created all the vector graphics including the user interface using SVG produced with Illustrator and Inkscape. It is connected to a Google spreadsheet where the food items data is stored. Logic is all Vanilla JavaScript, styles with SASS and responsive SVG user interface with conditional mediaqueries.",
+        "Small front-end app that allows to check food nutrition values. I created all the vector graphics including the user interface using SVG produced with Illustrator and Inkscape. It's going to be connected to a Google spreadsheet where the food items data will be stored. Logic is all Vanilla JavaScript, styles with SASS and responsive SVG user interface with conditional mediaqueries.",
       image: "nutritionFacts.png",
       svgTitle: ["Nutrition", "facts"],
       links: [
@@ -174,7 +174,7 @@ export default class ItemsWrapper extends Vue {
     {
       title: "Flying birds",
       description:
-        "Small excercise animating a single SVG symbol which is then attached randonmly as a shadow dom element with a random generator of <use> element. Once it has passed the right side it is deleted to avoid the DOM gronwing excessively. Since a single SVG symbol is used the movement is shared among all the birds and properties like scale and fill color can be set differently by instance.",
+        "Small excercise animating a single SVG symbol which is then attached randonmly as a Shadow DOM Element with a random generator of <use> element. Once it has passed the right side of the viewport it is deleted to avoid the DOM gronwing excessively. Since a single SVG symbol is used, the movement is shared among all the birds, and only properties like scale and fill color can be set differently by instance.",
       image: "flyingBirds.png",
       svgTitle: ["Flying", "birds"],
       links: [
@@ -185,7 +185,7 @@ export default class ItemsWrapper extends Vue {
     {
       title: "Logo animations",
       description:
-        "Green Sock SVG animations of existing logos from Lands Design and VisualARQ. Properties like stroke dasharray, linear gradient ... are animated .  Also the GSAP morph plugin in the case of Lands Design to achieve the transition from a leaf to all the letters. Original SVG drawings were redone with Inkscape to have the right structre for the animation to be possible.",
+        "GreenSock SVG animations of existing logos from Lands Design and VisualARQ. CSS properties like stroke dasharray and linear gradient are animated. Also the MorphSVGPlugin from GreenSock in the case of Lands Design was used to achieve the transition from a leaf to all the letters. The original SVG drawings were restructured with Inkscape to have the right structre for the animations to be possible.",
       image: "logoAnimations.png",
       svgTitle: ["Logo", "animations"],
       links: [
@@ -214,7 +214,8 @@ export default class ItemsWrapper extends Vue {
     // },
     {
       title: "Split App",
-      description: "App to add expenses and split.",
+      description:
+        "Web app to add expenses and split them among several people. Project developed during a full-stack development course. It uses ReactJS, NodeJS and MongoDB. It was not finished.",
       image: "monOncle.png",
       svgTitle: ["Split", "App"],
       links: [
@@ -225,7 +226,7 @@ export default class ItemsWrapper extends Vue {
     {
       title: "Beverages morph",
       description:
-        "Transition between different animated beverages and some data associated. The idea was to create a dynamic menu. Nullam orci enim, volutpat in vestibulum vitae, dapibus nec quam. In mollis, nulla a bibendum elementum, sem est iaculis purus, nec condimentum lacus nibh vitae tortor.",
+        "Several beverages can be transitioned. Each one has a subtle animation. It is a mix of CSS animations and the library Snap.svg to morph SVG paths. The idea is to create a digital beverages menu, which is currently work in progress.",
       image: "beveragesMorph.png",
       svgTitle: ["Beverages", "morph"],
       links: [
@@ -244,7 +245,7 @@ export default class ItemsWrapper extends Vue {
     {
       title: "UOCFlix",
       description:
-        "Serverless app that fetches the data from the movie database REST API. PWA that can be installed. Fusce a congue urna. Ut ac blandit odio. Sed condimentum lacus non magna tincidunt volutpat. Morbi interdum suscipit nisl sed convallis. Aliquam sed finibus augue, quis gravida risus. Maecenas sit amet semper dolor. Nullam orci enim, volutpat in vestibulum vitae, dapibus nec quam. In mollis, nulla a bibendum elementum, sem est iaculis purus, nec condimentum lacus nibh vitae tortor.",
+        "Serverless app to check data about movies (votes, summaries, genres, date, images, etc.). All the data is fetched from The Movie Database REST API. It was developed with Vanilla JavaScript and it is a PWA (progressive web app) hence offering the possibility to be installed.",
       image: "uocFlix.png",
       svgTitle: ["UOCFlix"],
       links: [
@@ -261,11 +262,11 @@ export default class ItemsWrapper extends Vue {
       ]
     },
     {
-      title: "Language tooltip",
+      title: "Language message",
       description:
-        "Laguage tooltip to be added to an existing multilanguage web site like a WordPress site that uses an url pattern like www.example.com/lang/restofpath. The goal is to advise that the site is available in the browser language and if the user takes a decision it is stored by a cookie and used to redirect automatically to the desired language. Tooltip can be positioned relative to an existing element or centered.",
+        "Laguage message box that can be added to an existing multilanguage web site like a WordPress site. The goal is to advise to the user that the site is available on it's preferred language. First time it uses the browser's language to know which could be the preferred language. Once the user has made a decision it is stored and used next time. It can be configured to for example offer automatic redirect or to postion it relative to another element like a tooltip or centered in the viewport.",
       image: "uocFlix.png",
-      svgTitle: ["Language", "tooltip"],
+      svgTitle: ["Language", "message"],
       links: [
         new LinkData(
           "https://github.com/juanramoncarceles/language-tooltip",
@@ -278,7 +279,7 @@ export default class ItemsWrapper extends Vue {
     {
       title: "User votes emailing",
       description:
-        "App designed to help with the task of sending emails to a set of users that have asked something at some time. When the time comes and all the users should be notified it reads the Google spreadsheet prepares the emails and after the confirmation it sends them. It uses Nodemailer and Pug.",
+        "Web app designed to help with the task of sending emails to a group of users that have reported some issue or request at some time during a product development. When the issue or request is fullfilled and all the users should be notified it reads a Google Sheet where all the data was stored and sends emails to the users to notify them. All the data is processed before sending the emails to avoid that a single user receives more than one email. It uses NodeJS with Nodemailer and Pug.",
       image: "usersVotesReport.png",
       svgTitle: ["User votes", "emailing"],
       links: [
@@ -289,8 +290,8 @@ export default class ItemsWrapper extends Vue {
     {
       title: "News portal",
       description:
-        "Master's back-end course project of a news portal. Laravel app with Vue front-end, Laravel creates the REST API.",
-      image: "uocFlix.png",
+        "Master's Degree Back-end course final project. It consists on a web app to read news. Only certain parts of the application were developed. It uses Laravel on the back-end, which is used to create a REST API that is used from the front-end to perform all the operations. The front-end was developed with Vue.",
+      image: "newsPortal.png",
       svgTitle: ["News", "portal"],
       links: [
         new LinkData(
