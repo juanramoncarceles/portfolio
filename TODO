@@ -1,4 +1,4 @@
-☐ Add curriculum static page. @process
+☐ Extract the array of project items data to an independent JS or JSON file. @high 
 
 ☐ Button to change the curriculum to spanish.
 
@@ -9,6 +9,7 @@
 ☐ Make covers of 500px.
 
 
+✔ Add curriculum static page. @process @done(20-07-05 00:25)
 ✔ Finish CSS for the smallest screen, when the profile is above the grid. @high @done(20-06-23 19:59)
 ✔ Links on profile should become smaller on small screen. Or make all the cover as SVG so it is responsive. @done(20-06-22 20:41)
 ✔ Set font on info container title. @done(20-06-21 20:54)
