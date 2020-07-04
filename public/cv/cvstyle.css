@@ -51,16 +51,14 @@ header {
 }
 
 h1 {
-  margin-bottom: 1rem;
+  font-size: 2.8rem;
   font-family: 'Raleway', sans-serif;
 }
 
-h1 > span:first-child {
-  font-size: 2.8rem;
-}
-
-h1 > span:last-child {
+h2 {
   font-size: 2.2rem;
+  font-family: 'Raleway', sans-serif;
+  line-height: 2.2rem;
   color: var(--theme-color);
 }
 
@@ -71,8 +69,9 @@ h1 > span:last-child {
 }
 
 .profile-data {
+  margin-top: 0.8rem;
   padding-left: 1rem;
-  line-height: 1.8rem;
+  line-height: 1.5rem;
   font-family: 'Bellota Text', sans-serif;
 }
 
