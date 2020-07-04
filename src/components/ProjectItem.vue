@@ -16,10 +16,15 @@
         width="200"
       />
       <rect class="itemBorder" width="200" height="200" style="fill:none;" />
-      <text class="itemTitle">
+      <polygon class="itemTitleBg" :points="backgroundPolygonPoints" />
+      <text class="itemTitle" ref="itemTitle">
         <tspan
-          x="10"
-          :y="190 - (projectData.svgTitle.length - 1 - i) * 26"
+          x="100"
+          :y="
+            100 +
+              (26 * projectData.svgTitle.length) / 2 -
+              (projectData.svgTitle.length - 1 - i) * 26
+          "
           v-for="(strFragment, i) in projectData.svgTitle"
           :key="i"
         >
@@ -65,8 +70,9 @@ export default class ProjectItem extends Vue {
 
   private isSelected = false;
   private isActive = false;
-  private activeItemMaxDimension = 1000;
+  private activeItemMaxDimension = 900;
   private fontBaseSize = 18;
+  private backgroundPolygonPoints = "";
   private itemContainerStyle = {
     transform: "unset",
     transitionDelay: "0s",
@@ -102,13 +108,32 @@ export default class ProjectItem extends Vue {
     return require("../assets/covers/" + name);
   }
 
+  /**
+   * From a rectangle object it returns the corresponding points attribute coordinates.
+   * @param offset The points are calculated based on a rectangle offset from the original.
+   */
+  private getSVGPointsFromRect({ x, y, width, height }: SVGRect, offset = 0) {
+    x -= offset;
+    y -= offset;
+    width += offset * 2;
+    height += offset * 2;
+    return `${x},${y} ${x + width},${y} ${x + width},${y + height} ${x},${y +
+      height}`;
+  }
+
+  mounted() {
+    // Calculate the title bounding box for its background.
+    const titleBBox = (this.$refs.itemTitle as SVGTextElement).getBBox();
+    this.backgroundPolygonPoints = this.getSVGPointsFromRect(titleBBox, 5);
+  }
+
   private selectItem(): void {
-    console.log("Selected");
+    //console.log("Selected");
     this.isSelected = true;
   }
 
   deselectItem(): void {
-    console.log("Deselected");
+    //console.log("Deselected");
     this.isSelected = false;
   }
 
@@ -261,15 +286,24 @@ export default class ProjectItem extends Vue {
     & > .itemTitle {
       fill: #f1f1f1;
       fill-opacity: 0;
+      text-anchor: middle;
       stroke: #f1f1f1;
-      stroke-width: 1px;
+      stroke-width: 0px;
       stroke-dasharray: 0px, 120px;
       filter: url(#drop-shadow);
       font-size: 28px;
       font-family: "Raleway", sans-serif;
-      transition-property: stroke-dasharray, stroke-width, fill-opacity;
-      transition-delay: 0s, 1s, 1s;
-      transition-duration: 1.5s, 0.5s, 0.5s;
+      transition-property: fill-opacity;
+      transition-delay: 0.5s;
+      transition-duration: 1s;
+    }
+    & > .itemTitleBg {
+      opacity: 0;
+      fill: #456e8a;
+      transform-origin: center;
+      transform: scale(3) rotate(-5deg);
+      transition-property: opacity, transform;
+      transition-duration: 1s;
     }
   }
 }
@@ -295,6 +329,10 @@ export default class ProjectItem extends Vue {
     stroke-width: 0px;
     stroke-dasharray: 120px, 120px;
   }
+  & > .itemTitleBg {
+    opacity: 0.8;
+    transform: scale(1) rotate(5deg);
+  }
 }
 
 .projectInfoContainer {
@@ -310,8 +348,8 @@ export default class ProjectItem extends Vue {
   background-color: #f6f6f6;
   transition: left 1s, top 1s;
   & .iconBtn {
-    width: 2em;
-    height: 2em;
+    width: 1.8em;
+    height: 1.8em;
     display: block;
   }
   & .closeItemBtn {
@@ -332,7 +370,7 @@ export default class ProjectItem extends Vue {
     & > p {
       text-align: center;
       font-family: serif;
-      font-size: 1.2em;
+      font-size: 1.1em;
     }
   }
   & > div:last-child {
@@ -342,7 +380,7 @@ export default class ProjectItem extends Vue {
       transition: transform 0.4s;
     }
     & > a:hover {
-      transform: translateY(-4px);
+      transform: scale(1.2);
     }
   }
 }
