@@ -280,7 +280,7 @@ export default class ItemsWrapper extends Vue {
       description:
         "App designed to help with the task of sending emails to a set of users that have asked something at some time. When the time comes and all the users should be notified it reads the Google spreadsheet prepares the emails and after the confirmation it sends them. It uses Nodemailer and Pug.",
       image: "usersVotesReport.png",
-      svgTitle: ["User", "votes", "emailing"],
+      svgTitle: ["User votes", "emailing"],
       links: [
         new LinkData("", LinkTitle.CodePen, LinkIconId.CodePen),
         new LinkData("", LinkTitle.External, LinkIconId.External)
@@ -343,6 +343,9 @@ export default class ItemsWrapper extends Vue {
   font-size: 16px;
   font-weight: 400;
   fill: #666;
+  & > a:visited {
+    fill: #666;
+  }
   & > a:hover {
     fill: var(--theme-color);
   }
