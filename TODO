@@ -1,3 +1,7 @@
+☐ Make item description text parsed from and HTML string to be able to create separate paragrafs and text styles.
+
+☐ Optional visible text on item links, it is important in cases where there is more than one link that is of the same type like two CodePen links. @high 
+
 ☐ Extract the array of project items data to an independent JS or JSON file. @high 
 
 ☐ Button to change the curriculum to spanish.
