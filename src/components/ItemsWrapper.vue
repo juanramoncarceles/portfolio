@@ -64,7 +64,7 @@
           />
         </g>
         <text y="112" id="subtitle">
-          <tspan x="240">front-end</tspan>
+          <tspan x="240">web</tspan>
           <tspan x="240" dy="24">developer</tspan>
         </text>
         <g id="profile-links">
@@ -127,7 +127,7 @@ export default class ItemsWrapper extends Vue {
         "Master's thesis project. App for managing documentation of BIM projects. The core idea are the smart drawings, which are building blueprints with attached BIM data. It is possible to check the data of a building element in the drawing, to add comments to them and tag collaborators, and to mesure distances, angles and areas. It is a serverless app connected to Google Drive to allow to store data and collaborate, and Firebase for cloud messaging. An exporter is required for each target platform to generate a file with all the data.",
       // tags: ["SVG", "TypeScript", "Google API", "Firebase"],
       image: "bimDrawings.png",
-      svgTitle: ["BIM", "Drawings"],
+      svgTitle: ["BIM", "drawings"],
       links: [
         new LinkData(
           "https://github.com/juanramoncarceles/bim-drawings",
@@ -142,22 +142,11 @@ export default class ItemsWrapper extends Vue {
       ]
     },
     {
-      title: "Round layout",
-      description:
-        "System to distribute a set of images in a round layout. On hover over an image it grows and if selected it is placed in the center.\n It was developed as a part of a bigger application, an with the idea to make it possible to be integrated in any project. Currently it is a work in progress.",
-      image: "roundPicsLayout.png",
-      svgTitle: ["Round", "layout"],
-      links: [
-        new LinkData("", LinkTitle.CodePen, LinkIconId.CodePen),
-        new LinkData("", LinkTitle.External, LinkIconId.External)
-      ]
-    },
-    {
       title: "Nutrition facts",
       description:
         "Small front-end app that allows to check food nutrition values. I created all the vector graphics including the user interface using SVG produced with Illustrator and Inkscape. It's going to be connected to a Google spreadsheet where the food items data will be stored. Logic is all Vanilla JavaScript, styles with SASS and responsive SVG user interface with conditional mediaqueries.",
       image: "nutritionFacts.png",
-      svgTitle: ["Nutrition", "facts"],
+      svgTitle: ["nutrition", "facts"],
       links: [
         new LinkData(
           "https://github.com/juanramoncarceles/nutritional-facts",
@@ -166,77 +155,6 @@ export default class ItemsWrapper extends Vue {
         ),
         new LinkData(
           "https://nutritionfactsapp.ramoncarceles.com",
-          LinkTitle.External,
-          LinkIconId.External
-        )
-      ]
-    },
-    {
-      title: "Flying birds",
-      description:
-        "Small excercise animating a single SVG symbol which is then attached randonmly as a Shadow DOM Element with a random generator of <use> element. Once it has passed the right side of the viewport it is deleted to avoid the DOM gronwing excessively. Since a single SVG symbol is used, the movement is shared among all the birds, and only properties like scale and fill color can be set differently by instance.",
-      image: "flyingBirds.png",
-      svgTitle: ["Flying", "birds"],
-      links: [
-        new LinkData("", LinkTitle.CodePen, LinkIconId.CodePen),
-        new LinkData("", LinkTitle.External, LinkIconId.External)
-      ]
-    },
-    {
-      title: "Logo animations",
-      description:
-        "GreenSock SVG animations of existing logos from Lands Design and VisualARQ. CSS properties like stroke dasharray and linear gradient are animated. Also the MorphSVGPlugin from GreenSock in the case of Lands Design was used to achieve the transition from a leaf to all the letters. The original SVG drawings were restructured with Inkscape to have the right structre for the animations to be possible.",
-      image: "logoAnimations.png",
-      svgTitle: ["Logo", "animations"],
-      links: [
-        new LinkData(
-          "https://codepen.io/jrcr/pen/wvwZYRb",
-          LinkTitle.CodePen,
-          LinkIconId.CodePen
-        ),
-        new LinkData(
-          "https://codepen.io/jrcr/pen/WVEzoZ",
-          LinkTitle.CodePen,
-          LinkIconId.CodePen
-        )
-      ]
-    },
-    // {
-    //   title: "Mon Oncle",
-    //   description:
-    //     "Interactive scene of the movie Mon Oncle by Jacques Tati. SVG created with Illustrator. A mix of CSS animations is used for continuous background elements and JavaScript for interactive elements.",
-    //   image: "monOncle.png",
-    //   svgTitle: ["Mon", "Oncle"],
-    //   links: [
-    //     new LinkData("", LinkTitle.CodePen, LinkIconId.CodePen),
-    //     new LinkData("", LinkTitle.External, LinkIconId.External)
-    //   ]
-    // },
-    {
-      title: "Split App",
-      description:
-        "Web app to add expenses and split them among several people. Project developed during a full-stack development course. It uses ReactJS, NodeJS and MongoDB. It was not finished.",
-      image: "monOncle.png",
-      svgTitle: ["Split", "App"],
-      links: [
-        new LinkData("", LinkTitle.CodePen, LinkIconId.CodePen),
-        new LinkData("", LinkTitle.External, LinkIconId.External)
-      ]
-    },
-    {
-      title: "Beverages morph",
-      description:
-        "Several beverages can be transitioned. Each one has a subtle animation. It is a mix of CSS animations and the library Snap.svg to morph SVG paths. The idea is to create a digital beverages menu, which is currently work in progress.",
-      image: "beveragesMorph.png",
-      svgTitle: ["Beverages", "morph"],
-      links: [
-        new LinkData(
-          "https://github.com/juanramoncarceles/beverages-animation",
-          LinkTitle.GitHub,
-          LinkIconId.GitHub
-        ),
-        new LinkData(
-          "https://juanramoncarceles.github.io/beverages-animation/",
           LinkTitle.External,
           LinkIconId.External
         )
@@ -265,11 +183,11 @@ export default class ItemsWrapper extends Vue {
       title: "Language message",
       description:
         "Laguage message box that can be added to an existing multilanguage web site like a WordPress site. The goal is to advise to the user that the site is available on it's preferred language. First time it uses the browser's language to know which could be the preferred language. Once the user has made a decision it is stored and used next time. It can be configured to for example offer automatic redirect or to postion it relative to another element like a tooltip or centered in the viewport.",
-      image: "uocFlix.png",
-      svgTitle: ["Language", "message"],
+      image: "languageMessage.png",
+      svgTitle: ["language", "message"],
       links: [
         new LinkData(
-          "https://github.com/juanramoncarceles/language-tooltip",
+          "https://github.com/juanramoncarceles/language-message",
           LinkTitle.GitHub,
           LinkIconId.GitHub
         )
@@ -277,14 +195,47 @@ export default class ItemsWrapper extends Vue {
       ]
     },
     {
-      title: "User votes emailing",
+      title: "Logo animations",
+      description:
+        "GreenSock SVG animations of existing logos from Lands Design and VisualARQ. CSS properties like stroke dasharray and linear gradient are animated. Also the MorphSVGPlugin from GreenSock in the case of Lands Design was used to achieve the transition from a leaf to all the letters. The original SVG drawings were restructured with Inkscape to have the right structre for the animations to be possible.",
+      image: "logoAnimations.png",
+      svgTitle: ["logo", "animations"],
+      links: [
+        new LinkData(
+          "https://codepen.io/jrcr/pen/wvwZYRb",
+          LinkTitle.CodePen,
+          LinkIconId.CodePen
+        ),
+        new LinkData(
+          "https://codepen.io/jrcr/pen/WVEzoZ",
+          LinkTitle.CodePen,
+          LinkIconId.CodePen
+        )
+      ]
+    },
+    // {
+    //   title: "Mon Oncle",
+    //   description:
+    //     "Interactive scene of the movie Mon Oncle by Jacques Tati. SVG created with Illustrator. A mix of CSS animations is used for continuous background elements and JavaScript for interactive elements.",
+    //   image: "monOncle.png",
+    //   svgTitle: ["Mon", "Oncle"],
+    //   links: [
+    //     new LinkData("", LinkTitle.CodePen, LinkIconId.CodePen),
+    //     new LinkData("", LinkTitle.External, LinkIconId.External)
+    //   ]
+    // },
+    {
+      title: "user votes emailing",
       description:
         "Web app designed to help with the task of sending emails to a group of users that have reported some issue or request at some time during a product development. When the issue or request is fullfilled and all the users should be notified it reads a Google Sheet where all the data was stored and sends emails to the users to notify them. All the data is processed before sending the emails to avoid that a single user receives more than one email. It uses NodeJS with Nodemailer and Pug.",
       image: "usersVotesReport.png",
-      svgTitle: ["User votes", "emailing"],
+      svgTitle: ["user votes", "emailing"],
       links: [
-        new LinkData("", LinkTitle.CodePen, LinkIconId.CodePen),
-        new LinkData("", LinkTitle.External, LinkIconId.External)
+        new LinkData(
+          "https://github.com/juanramoncarceles/users-votes-emailing",
+          LinkTitle.GitHub,
+          LinkIconId.GitHub
+        )
       ]
     },
     {
@@ -292,14 +243,75 @@ export default class ItemsWrapper extends Vue {
       description:
         "Master's Degree Back-end course final project. It consists on a web app to read news. Only certain parts of the application were developed. It uses Laravel on the back-end, which is used to create a REST API that is used from the front-end to perform all the operations. The front-end was developed with Vue.",
       image: "newsPortal.png",
-      svgTitle: ["News", "portal"],
+      svgTitle: ["news", "portal"],
       links: [
         new LinkData(
-          "https://github.com/juanramoncarceles/laravel-vue-exercise",
+          "https://github.com/juanramoncarceles/news-portal",
           LinkTitle.GitHub,
           LinkIconId.GitHub
         )
         // new LinkData("", LinkTitle.External, LinkIconId.External)
+      ]
+    },
+    {
+      title: "SettleApp",
+      description:
+        "Web app to add expenses and split them among several people. Project developed during a full-stack development course. It uses ReactJS, NodeJS and MongoDB. It was not finished.",
+      image: "placeholder.png",
+      svgTitle: ["settle", "app"],
+      links: [
+        new LinkData(
+          "https://github.com/juanramoncarceles/settle-app",
+          LinkTitle.GitHub,
+          LinkIconId.GitHub
+        )
+      ]
+    },
+    {
+      title: "Beverages morph",
+      description:
+        "Several beverages can be transitioned. Each one has a subtle animation. It is a mix of CSS animations and the library Snap.svg to morph SVG paths. The idea is to create a digital beverages menu, which is currently work in progress.",
+      image: "beveragesMorph.png",
+      svgTitle: ["beverages", "morph"],
+      links: [
+        new LinkData(
+          "https://github.com/juanramoncarceles/beverages-animation",
+          LinkTitle.GitHub,
+          LinkIconId.GitHub
+        ),
+        new LinkData(
+          "https://juanramoncarceles.github.io/beverages-animation/",
+          LinkTitle.External,
+          LinkIconId.External
+        )
+      ]
+    },
+    {
+      title: "Flying birds",
+      description:
+        "Small excercise animating a single SVG symbol which is then attached randonmly as a Shadow DOM Element with a random generator of <use> element. Once it has passed the right side of the viewport it is deleted to avoid the DOM gronwing excessively. Since a single SVG symbol is used, the movement is shared among all the birds, and only properties like scale and fill color can be set differently by instance. ... window.requestAnimationFrame()",
+      image: "flyingBirds.png",
+      svgTitle: ["flying", "birds"],
+      links: [
+        new LinkData(
+          "https://codepen.io/jrcr/pen/GRKyQgL",
+          LinkTitle.CodePen,
+          LinkIconId.CodePen
+        )
+      ]
+    },
+    {
+      title: "Round layout",
+      description:
+        "System to distribute a set of images in a round layout. On hover over an image it grows and if selected it is placed in the center.\n It was developed as a part of a bigger application, an with the idea to make it possible to be integrated in any project. Currently it is a work in progress.",
+      image: "roundPicsLayout.png",
+      svgTitle: ["round", "layout"],
+      links: [
+        new LinkData(
+          "https://codepen.io/jrcr/pen/mYNooK",
+          LinkTitle.CodePen,
+          LinkIconId.CodePen
+        )
       ]
     }
   ];
@@ -328,6 +340,8 @@ export default class ItemsWrapper extends Vue {
   display: grid;
   max-width: 1300px;
   grid-template-columns: 1fr 1fr;
+  gap: 0.3rem;
+  grid-gap: 0.3rem;
   margin: auto;
 }
 
