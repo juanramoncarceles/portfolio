@@ -143,7 +143,7 @@ export default class ProjectItem extends Vue {
    * TODO Make it responsive so it opens vertically on portrait windows.
    */
   private activateItem(): void {
-    console.log("Activated");
+    //console.log("Activated");
     const itemDomRect = this.$el.getBoundingClientRect();
     const itemWidth = itemDomRect.width;
     const itemCenterX = itemDomRect.x + itemWidth / 2;
@@ -210,7 +210,7 @@ export default class ProjectItem extends Vue {
    * Closes the project item.
    */
   private deactivateItem(): void {
-    console.log("Deactivated");
+    //console.log("Deactivated");
     this.infoContainerStyle.left = "0";
     this.infoContainerStyle.top = "0";
     this.itemContainerStyle.transform = `translate(0px,0px) scale(1)`;
@@ -223,7 +223,7 @@ export default class ProjectItem extends Vue {
    */
   private openCloseTransitionendHandler(e: TransitionEvent): void {
     if (e.target === this.$el) {
-      console.log("Item transitionend");
+      //console.log("Item transitionend");
       if (!this.isActive) {
         this.isActive = true;
         // Same as the duration of the css transition duration for the .projectInfoContainer

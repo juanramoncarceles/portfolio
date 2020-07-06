@@ -225,7 +225,7 @@ export default class ItemsWrapper extends Vue {
     //   ]
     // },
     {
-      title: "user votes emailing",
+      title: "User votes emailing",
       description:
         "Web app designed to help with the task of sending emails to a group of users that have reported some issue or request at some time during a product development. When the issue or request is fullfilled and all the users should be notified it reads a Google Sheet where all the data was stored and sends emails to the users to notify them. All the data is processed before sending the emails to avoid that a single user receives more than one email. It uses NodeJS with Nodemailer and Pug.",
       image: "usersVotesReport.png",
@@ -257,7 +257,7 @@ export default class ItemsWrapper extends Vue {
       title: "SettleApp",
       description:
         "Web app to add expenses and split them among several people. Project developed during a full-stack development course. It uses ReactJS, NodeJS and MongoDB. It was not finished.",
-      image: "placeholder.png",
+      image: "settleApp.png",
       svgTitle: ["settle", "app"],
       links: [
         new LinkData(
@@ -289,7 +289,7 @@ export default class ItemsWrapper extends Vue {
     {
       title: "Flying birds",
       description:
-        "Small excercise animating a single SVG symbol which is then attached randonmly as a Shadow DOM Element with a random generator of <use> element. Once it has passed the right side of the viewport it is deleted to avoid the DOM gronwing excessively. Since a single SVG symbol is used, the movement is shared among all the birds, and only properties like scale and fill color can be set differently by instance. ... window.requestAnimationFrame()",
+        "Small excercise animating a single SVG symbol with window.requestAnimationFrame(). It is generated randomly as a SVG <use> element that references the symbol and then attached to the DOM as a shadow element. Once it has passed the right side of the viewport it is deleted to avoid the DOM growing excessively. Since a single SVG symbol is used, the movement is shared among all the birds, and only properties like scale and fill color can be set differently by instance.",
       image: "flyingBirds.png",
       svgTitle: ["flying", "birds"],
       links: [
