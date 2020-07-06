@@ -1,11 +1,11 @@
 import { LinkIconId, LinkTitle } from "../enums";
 
 export interface ProjectData {
-  title: string,
-  description: string,
-  image: string,
-  svgTitle: Array<string>,
-  links?: Array<LinkData>
+  title: string;
+  description: string;
+  image: string;
+  svgTitle: Array<string>;
+  links?: Array<LinkData>;
 }
 
 export class LinkData {
