@@ -5,7 +5,7 @@ module.exports = {
   },
   chainWebpack: config => {
     config.plugin("html").tap(args => {
-      args[0].title = "Ramón Cárceles | Front-end developer";
+      args[0].title = "Ramón Cárceles | Web developer";
       return args;
     });
   }
