@@ -3,6 +3,7 @@ import { LinkIconId, LinkTitle } from "../enums";
 export interface ProjectData {
   title: string;
   description: string;
+  tags: string[];
   image: string;
   svgTitle: Array<string>;
   links?: Array<LinkData>;

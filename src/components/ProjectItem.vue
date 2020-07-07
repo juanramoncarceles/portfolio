@@ -39,10 +39,13 @@
             <use href="#crossIcon" />
           </svg>
         </button>
-        <h2>{{ projectData.title }}</h2>
-        <p>{{ projectData.description }}</p>
+        <h2 class="project-title">{{ projectData.title }}</h2>
+        <div class="project-tags">
+          <span v-for="(tag, i) in projectData.tags" :key="i">{{ tag }}</span>
+        </div>
+        <div class="project-description" v-html="projectData.description"></div>
       </div>
-      <div>
+      <div class="links-container">
         <a
           :href="link.value"
           target="_blank"
@@ -360,20 +363,33 @@ export default class ProjectItem extends Vue {
       height: 1em;
     }
   }
-  & > div:first-child {
-    & > h2 {
-      text-align: center;
-      margin: 0 1.2em 0.5em;
-      font-family: "Raleway", sans-serif;
-      font-size: 2em;
-    }
-    & > p {
-      text-align: center;
-      font-family: serif;
-      font-size: 1.1em;
+  & .project-title {
+    text-align: center;
+    margin: 0 1.2em 0.3em;
+    font-family: "Raleway", sans-serif;
+    font-size: 1.8em;
+    font-weight: 700;
+  }
+  & .project-tags {
+    display: flex;
+    margin-bottom: 0.5em;
+    justify-content: center;
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    font-size: 0.8em;
+    & > span {
+      padding: 2px;
+      margin-right: 0.5em; /* TODO all but last */
+      border: 1px solid #d1d1d1;
+      border-radius: 3px;
     }
   }
-  & > div:last-child {
+  & .project-description {
+    text-align: center;
+    font-family: "Arvo", monospace;
+    font-size: 0.95em;
+  }
+  & > .links-container {
     display: flex;
     justify-content: space-evenly;
     & > a {
