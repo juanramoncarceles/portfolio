@@ -144,13 +144,13 @@ export default class ItemsWrapper extends Vue {
     {
       title: "Nutrition facts",
       description:
-        "<p>Small front-end app that allows to check food nutrition values. I created all the vector graphics including the user interface using SVG produced with Illustrator and Inkscape. It's going to be connected to a Google spreadsheet where the food items data will be stored. Logic is all Vanilla JavaScript, styles with SASS and responsive SVG user interface with conditional mediaqueries.</p>",
-      tags: ["SVG", "Vanilla JavaScript"],
+        "<p>Small React app that allows to check food nutrition values. It fetches the data from a JSON file. CSS is written inside the TypeScript files thanks to Emotion. It has a responsive SVG user interface with conditional mediaqueries. CountUp.js is used to do the numbers transition. I created all the vector graphics including the user interface using SVG produced with Inkscape.</p>",
+      tags: ["React", "TypeScript", "SVG"],
       image: "nutritionFacts.png",
       svgTitle: ["nutrition", "facts"],
       links: [
         new LinkData(
-          "https://github.com/juanramoncarceles/nutritional-facts",
+          "https://github.com/juanramoncarceles/nutrition-facts",
           LinkTitle.GitHub,
           LinkIconId.GitHub
         ),
