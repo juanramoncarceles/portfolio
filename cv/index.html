@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="cvstyle.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bellota+Text:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="root">
+    <div v-if="Object.keys(contents).length > 0">
+
+      <div class="side-options">
+        <a class="download" :href="'./ramon_carceles_cv-' + currentLang + '.pdf'" download="">{{ words.download[currentLang] }}</a>
+        <select v-on:change="changeLanguage" class="lang-select">
+          <option v-for="key in Object.keys(contents)" :value="key">{{key}}</option>
+        </select>
+      </div>
+
+      <main>
+        <header>
+          <img class="portrait" src="profile.jpg" :alt="'Picture of ' + selectedLangContents.header.name">
+          <div class="self">
+            <h1>{{ selectedLangContents.header.name }}</h1>
+            <h2>{{ selectedLangContents.header.title }}</h2>
+            <ul class="profile-data">
+              <li>{{ selectedLangContents.header.email }}</li>
+              <li><a :href="selectedLangContents.header.website.url">{{ selectedLangContents.header.website.text }}</a></li>
+              <li>{{ selectedLangContents.header.location }}</li>
+            </ul>
+          </div>
+        </header>
+
+        <div class="category" v-for="section in selectedLangContents.body" :key="section.title">
+          <h3 class="category-title">{{ section.title.toUpperCase() }}</h3>
+
+          <div v-for="item in section.items" :key="item.title">
+            <article v-if="!item.hidden && section.type === 'default'" class="category-content">
+              <p class="category-content-date">
+                <time datetime="2017-09-20" v-html="item.period.start.replace(' ', '&lt;/br&gt;')"></time>&nbsp;-&nbsp;<time datetime="2020-06-16" v-html="item.period.end.replace(' ', '&lt;/br&gt;')"></time>
+              </p>
+              <div class="category-content-info">
+                <h3>{{ item.title }} <span v-if="item.credits">({{ item.credits.amount }} <abbr :title="item.credits.type">{{ item.credits.acronym }}</abbr>)</span></h3>
+                <h4>
+                  <span v-if="item.entity.url">
+                    <a :href="item.entity.url" target="_blank">{{ item.entity.name }}</a>
+                  </span>
+                  <span v-else>
+                    {{ item.entity.name }}
+                  </span>
+                  <span v-if="item.entity.extra">&nbsp;({{ item.entity.extra }})</span>
+                </h4>
+                <ul class="info-list">
+                  <li v-for="detail in item.details">{{ detail }}</li>
+                </ul>
+              </div>
+            </article>
+            <article v-else-if="!item.hidden && section.type === 'table'" class="category-content">
+              <h4 class="subtitle subtitle-column">{{ item.title }}</h4>
+              <ul class="skills-list">
+                <li v-for="skill in item.skills">{{ skill }}</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </main>
+
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.min.js" integrity="sha512-BKbSR+cfyxLdMAsE0naLReFSLg8/pjbgfxHh/k/kUC82Hy7r6HtR5hLhobaln2gcTvzkyyehrdREdjpsQwy2Jw==" crossorigin="anonymous"></script>
+
+  <script>
+    new Vue({
+      el: '#root',
+      data: {
+        selectedLangContents: [],
+        currentLang: '',
+        contents: {},
+        words: {
+          download: {
+            en: "Download",
+            es: "Descargar",
+            it: "Scaricare"
+          },
+          cv: {
+            en: "Resume",
+            es: "Curriculum",
+            it: "Curriculum"
+          }
+        }
+      },
+      methods: {
+        changeLanguage: function (e) {
+          const selectedLang = e.target.value;
+          this.selectedLangContents = this.contents[e.target.value];
+          this.currentLang = selectedLang;
+          document.title = this.selectedLangContents.header.name + ' | ' + this.words.cv[selectedLang];
+          document.documentElement.setAttribute('lang', selectedLang);
+        }
+      },
+      mounted: async function () {
+        const resData = await fetch('/cv/cvdata.json');
+        const data = await resData.json();
+        // Get the first key of the data object to show its contents.
+        let firstLang;
+        for (let key in data) {
+          firstLang = key;
+          break;
+        }
+        this.selectedLangContents = data[firstLang];
+        this.currentLang = firstLang;
+        document.title = this.selectedLangContents.header.name + ' | ' + this.words.cv[firstLang];
+        document.documentElement.setAttribute('lang', firstLang);
+        this.contents = data;
+      }
+    });
+  </script>
+</body>
+
+</html>
