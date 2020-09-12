@@ -103,7 +103,7 @@
         }
       },
       mounted: async function () {
-        const resData = await fetch('/cvdata.json');
+        const resData = await fetch('/cv/cvdata.json');
         const data = await resData.json();
         // Get the first key of the data object to show its contents.
         let firstLang;
