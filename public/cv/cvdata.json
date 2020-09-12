@@ -1,118 +1,518 @@
 {
-  "sections": [
-    {
-      "title": "Educación",
-      "items": [
-        {
-          "period": {
-            "start": "Sep 2017",
-            "end": "Jun 2020"
-          },
-          "title": "Máster en Aplicaciones Multimedia (78 ECTS)",
-          "subtitle": "Universitat Oberta de Catalunya",
-          "details": [
-            "",
-            "",
-            ""
-          ]
-        },
-        {
-          "period": {
-            "start": "Sep 2013",
-            "end": "Jul 2014"
-          },
-          "title": "Estudios de arquitectura en Italia",
-          "subtitle": "Politecnico di Milano",
-          "details": [
-            "",
-            "",
-            ""
-          ]
-        },
-        {
-          "period": {
-            "start": "Sep 2009",
-            "end": "Feb 2016"
-          },
-          "title": "Grado en arquitectura (330 ECTS)",
-          "subtitle": "Universitat de Girona",
-          "details": [
-            "",
-            "",
-            ""
-          ]
-        }
-      ]
+  "en": {
+    "header": {
+      "name": "Ramón Cárceles",
+      "title": "Web Developer",
+      "email": "juanramoncarceles@gmail.com",
+      "website": {
+        "text": "www.ramoncarceles.com",
+        "url": "https://www.ramoncarceles.com"
+      },
+      "location": "Barcelona"
     },
-    {
-      "title": "Experiencia",
-      "items": [
-        {
-          "period": {
-            "start": "Nov 2018",
-            "end": "Current"
+    "body": [
+      {
+        "title": "Education",
+        "type": "default",
+        "items": [
+          {
+            "period": {
+              "start": "Sep 2017",
+              "end": "Jun 2020"
+            },
+            "title": "Master's Degree in Multimedia Applications",
+            "credits": {
+              "type": "European Credit Transfer and Accumulation System",
+              "acronym": "ECTS",
+              "amount": "78"
+            },
+            "entity": {
+              "name": "Universitat Oberta de Catalunya",
+              "url": "https://www.uoc.edu/portal/en/estudis_arees/informatica_multimedia_telecomunicacio/index.html"
+            },
+            "details": [
+              "Front-end development with React and Vue",
+              "Back-end development with Laravel and PHP",
+              "Multimedia content production, management and distribution",
+              "SEO and web analytics"
+            ]
           },
-          "title": "Product Manager VisualARQ",
-          "subtitle": "Asuni Soft (Barcelona)",
-          "details": [
-            "Tech support",
-            "Software demonstrations",
-            "Product management: test, analysis...",
-            "Email campaing preparation / maquetacion"
-          ]
-        },
-        {
-          "period": {
-            "start": "Jun 2017",
-            "end": "Sep 2018"
+          {
+            "period": {
+              "start": "Sep 2009",
+              "end": "Feb 2016"
+            },
+            "title": "Degree in Architecture",
+            "credits": {
+              "type": "European Credit Transfer and Accumulation System",
+              "acronym": "ECTS",
+              "amount": "330"
+            },
+            "entity": {
+              "name": "Universitat de Girona",
+              "url": "https://www.udg.edu/es/estudia/Oferta-formativa/Graus/Fitxes?IDE=954&ID=3105G1214"
+            },
+            "details": [
+              "Architectural design",
+              "Calculation of structures"
+            ]
           },
-          "title": "Arquitecto",
-          "subtitle": "Disseny, Arquitectura i Urbanisme (Girona)",
-          "details": [
-            "Desarrollo de proyectos residenciales, desde el concepto hasta la visita de obra",
-            "Redacción de proyectos ejecutivos, detalles constructivos, presupuestos..."
-          ]
-        },
-        {
-          "period": {
-            "start": "Nov 2016",
-            "end": "May 2017"
+          {
+            "period": {
+              "start": "Sep 2013",
+              "end": "Jul 2014"
+            },
+            "title": "Architecture studies abroad",
+            "entity": {
+              "name": "Politecnico di Milano"
+            },
+            "details": []
+          }
+        ]
+      },
+      {
+        "title": "Experience",
+        "type": "default",
+        "items": [
+          {
+            "period": {
+              "start": "Nov 2018",
+              "end": "Current"
+            },
+            "title": "Product Manager VisualARQ",
+            "entity": {
+              "name": "Asuni Soft",
+              "url": "https://www.asuni.com/",
+              "extra": "Barcelona"
+            },
+            "details": [
+              "Product management: planning, strategy, analysis...",
+              "Developement of the product's website",
+              "Multimedia content for product promotion and documentation",
+              "Software demonstrations to clients and in events in Spain and Italy",
+              "Technical support",
+              "Email campaings"
+            ]
           },
-          "title": "Arquitecto",
-          "subtitle": "MOKE Architecten (Ámsterdam)",
-          "details": [
-            "Desarrollo de proyectos y estudios de viavilidad residenciales.",
-            "Modelado 3D e infografía arquitectónica."
-          ]
-        }
-      ]
+          {
+            "period": {
+              "start": "Jun 2017",
+              "end": "Sep 2018"
+            },
+            "title": "Architect",
+            "entity": {
+              "name": "Disseny, Arquitectura i Urbanisme",
+              "extra": "Girona"
+            },
+            "details": [
+              "Developement of residential projects from concept to construction",
+              "Buildings technical documentation, budgets and construction details"
+            ]
+          },
+          {
+            "period": {
+              "start": "Nov 2016",
+              "end": "May 2017"
+            },
+            "title": "Architect assistant",
+            "entity": {
+              "name": "MOKE Architecten",
+              "url": "https://www.mokearchitecten.nl/",
+              "extra": "Ámsterdam"
+            },
+            "details": [
+              "Developement of residential projects",
+              "Architectural 3D modelling and visualization"
+            ]
+          },
+          {
+            "hidden": "true",
+            "period": {
+              "start": "May 2016",
+              "end": "Aug 2016"
+            },
+            "title": "Architect assistant",
+            "entity": {
+              "name": "@ n'onA d.o.o. Davor Busnja",
+              "url": "http://davorbusnja.com/",
+              "extra": "Dubrovnik"
+            },
+            "details": [
+              "Design of office and exhibition projects",
+              "Construction details, 3D modelling and visualization"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Non-regulated education",
+        "type": "default",
+        "items": [
+          {
+            "period": {
+              "start": "Dec 2018",
+              "end": "Dec 2018"
+            },
+            "title": "Workshop on Grasshopper3D programming in C#",
+            "entity": {
+              "name": "McNeel Europe",
+              "url": "https://www.mcneel.com/eu",
+              "extra": "Barcelona - 28h"
+            },
+            "details": [
+              "Advanced C# scripting with Grasshopper",
+              "Grasshopper plug-in developement"
+            ]
+          },
+          {
+            "period": {
+              "start": "Sep 2018",
+              "end": "Oct 2018"
+            },
+            "title": "Full Stack web developement with ReactJS",
+            "entity": {
+              "name": "Fundació Esplai",
+              "url": "https://fundacionesplai.org/enfocat/",
+              "extra": "Barcelona - 150h"
+            },
+            "details": [
+              "Front-end development with ReactJS",
+              "Back-end development with NodeJS, Express and MongoDB"
+            ]
+          },
+          {
+            "period": {
+              "start": "Jul 2017",
+              "end": "Sep 2017"
+            },
+            "title": "Technological skills in Java and SQL",
+            "entity": {
+              "name": "Fundació Esplai",
+              "url": "https://fundacionesplai.org/enfocat/",
+              "extra": "Barcelona - 250h"
+            },
+            "details": [
+              "Object oriented programming with Java",
+              "Relational databases (MySQL)"
+            ]
+          },
+          {
+            "hidden": "true",
+            "period": {
+              "start": "Oct 2015",
+              "end": "Nov 2015"
+            },
+            "title": "Autodesk Revit",
+            "entity": {
+              "name": "METROPA School",
+              "url": "https://www.metropa.es",
+              "extra": "Madrid - 60h"
+            },
+            "details": [
+              "BIM Modelling and organization",
+              "Project documentation and presentation"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Skills",
+        "type": "table",
+        "items": [
+          {
+            "title": "Web dev",
+            "skills": [
+              "HTML & CSS",
+              "JavaScript",
+              "TypeScript",
+              "ReactJS",
+              "Vue",
+              "Git - GitHub",
+              "NodeJS",
+              "PHP / Laravel",
+              "WordPress"
+            ]
+          },
+          {
+            "hidden": "true",
+            "title": "Architecture",
+            "skills": [
+              "Rhino & Grasshopper",
+              "Illustrator",
+              "Revit",
+              "V-Ray",
+              "3ds Max",
+              "Photoshop"
+            ]
+          },
+          {
+            "title": "Languages",
+            "skills": [
+              "Spanish",
+              "English (B2.1)",
+              "Italian (C1)"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "es": {
+    "header": {
+      "name": "Ramón Cárceles",
+      "title": "Desarrollador Web",
+      "email": "juanramoncarceles@gmail.com",
+      "website": {
+        "text": "www.ramoncarceles.com",
+        "url": "https://www.ramoncarceles.com"
+      },
+      "location": "Barcelona"
     },
-    {
-      "title": "Habilidades",
-      "items": [
-        {
-          "title": "Software",
-          "items": [
-            "HTML & SVG",
-            "CSS & SASS",
-            "JavaScript",
-            "ReactJS",
-            "TypeScript",
-            "Git - GitHub",
-            "NodeJS",
-            "Google API",
-            "Firebase"
-          ]
-        },
-        {
-          "title": "Idiomas",
-          "items": [
-            "Español",
-            "Inglés (B2.1)",
-            "Italiano (C1)"
-          ]
-        }
-      ]
-    }
-  ]
+    "body": [
+      {
+        "title": "Educación",
+        "type": "default",
+        "items": [
+          {
+            "period": {
+              "start": "Sep 2017",
+              "end": "Jun 2020"
+            },
+            "title": "Máster en Aplicaciones Multimedia",
+            "credits": {
+              "type": "European Credit Transfer and Accumulation System",
+              "acronym": "ECTS",
+              "amount": "78"
+            },
+            "entity": {
+              "name": "Universitat Oberta de Catalunya",
+              "url": "https://www.uoc.edu/portal/en/estudis_arees/informatica_multimedia_telecomunicacio/index.html"
+            },
+            "details": [
+              "Desarrollo front-end con React y Vue",
+              "Desarrollo back-end con Laravel y PHP",
+              "Producción de contenido multimedia, gestión y distribución",
+              "SEO y análisis web"
+            ]
+          },
+          {
+            "period": {
+              "start": "Sep 2009",
+              "end": "Feb 2016"
+            },
+            "title": "Grado en arquitectura",
+            "credits": {
+              "type": "European Credit Transfer and Accumulation System",
+              "acronym": "ECTS",
+              "amount": "330"
+            },
+            "entity": {
+              "name": "Universitat de Girona",
+              "url": "https://www.udg.edu/es/estudia/Oferta-formativa/Graus/Fitxes?IDE=954&ID=3105G1214"
+            },
+            "details": [
+              "Diseño arquitectónico",
+              "Cálculo de estructuras"
+            ]
+          },
+          {
+            "period": {
+              "start": "Sep 2013",
+              "end": "Jul 2014"
+            },
+            "title": "Estudios de arquitectura en Italia",
+            "entity": {
+              "name": "Politecnico di Milano"
+            },
+            "details": []
+          }
+        ]
+      },
+      {
+        "title": "Experiencia",
+        "type": "default",
+        "items": [
+          {
+            "period": {
+              "start": "Nov 2018",
+              "end": "Actual"
+            },
+            "title": "Product Manager VisualARQ",
+            "entity": {
+              "name": "Asuni Soft",
+              "url": "https://www.asuni.com/",
+              "extra": "Barcelona"
+            },
+            "details": [
+              "Gestión de producto: planificación, estrategia, análisis...",
+              "Creación de material multimedia para promoción y documentación (modelos 3D, imágenes, vídeos...)",
+              "Desarrollo web del producto",
+              "Demostraciones de software en eventos y a clientes en España e Italia",
+              "Soporte técnico",
+              "Campañas de email"
+            ]
+          },
+          {
+            "period": {
+              "start": "Jun 2017",
+              "end": "Sep 2018"
+            },
+            "title": "Arquitecto",
+            "entity": {
+              "name": "Disseny, Arquitectura i Urbanisme",
+              "extra": "Girona"
+            },
+            "details": [
+              "Desarrollo de proyectos residenciales, desde el concepto hasta la visita de obra",
+              "Redacción de proyectos ejecutivos, detalles constructivos, presupuestos..."
+            ]
+          },
+          {
+            "period": {
+              "start": "Nov 2016",
+              "end": "May 2017"
+            },
+            "title": "Arquitecto asistente",
+            "entity": {
+              "name": "MOKE Architecten",
+              "url": "https://www.mokearchitecten.nl/",
+              "extra": "Ámsterdam"
+            },
+            "details": [
+              "Desarrollo de proyectos y estudios de viavilidad residenciales",
+              "Modelado 3D e infografía arquitectónica"
+            ]
+          },
+          {
+            "hidden": "true",
+            "period": {
+              "start": "May 2016",
+              "end": "Aug 2016"
+            },
+            "title": "Arquitecto asistente",
+            "entity": {
+              "name": "@ n'onA d.o.o. Davor Busnja",
+              "url": "http://davorbusnja.com/",
+              "extra": "Dubrovnik"
+            },
+            "details": [
+              "Diseño de proyectos de oficinas y espacios expositivos",
+              "Detalles constructivos, modelado 3D e infografía arquitectónica"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Formación no reglada",
+        "type": "default",
+        "items": [
+          {
+            "period": {
+              "start": "Dic 2018",
+              "end": "Dic 2018"
+            },
+            "title": "Workshop de programación C# en Grasshopper3D",
+            "entity": {
+              "name": "McNeel Europe",
+              "url": "https://www.mcneel.com/eu",
+              "extra": "Barcelona - 28h"
+            },
+            "details": [
+              "Scripting avanzado en Grasshopper con C#",
+              "Desarrollo de plug-ins para Grasshopper"
+            ]
+          },
+          {
+            "period": {
+              "start": "Sep 2018",
+              "end": "Oct 2018"
+            },
+            "title": "Desarrollo web full stack con ReactJS",
+            "entity": {
+              "name": "Fundació Esplai",
+              "url": "https://fundacionesplai.org/enfocat/",
+              "extra": "Barcelona - 150h"
+            },
+            "details": [
+              "Desarrollo front-end con ReactJS",
+              "Desarrollo back-end con NodeJS, Express y MongoDB"
+            ]
+          },
+          {
+            "period": {
+              "start": "Jul 2017",
+              "end": "Sep 2017"
+            },
+            "title": "Habilidades tecnológicas en Java y SQL",
+            "entity": {
+              "name": "Fundació Esplai",
+              "url": "https://fundacionesplai.org/enfocat/",
+              "extra": "Barcelona - 250h"
+            },
+            "details": [
+              "Programación orientada a objetos con Java",
+              "Bases de datos relacionales (MySQL)"
+            ]
+          },
+          {
+            "hidden": "true",
+            "period": {
+              "start": "Oct 2015",
+              "end": "Nov 2015"
+            },
+            "title": "Autodesk Revit",
+            "entity": {
+              "name": "METROPA School",
+              "url": "https://www.metropa.es",
+              "extra": "Madrid - 60h"
+            },
+            "details": [
+              "Modelado 3D y organización BIM",
+              "Documentación y presentación del proyecto"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Habilidades",
+        "type": "table",
+        "items": [
+          {
+            "title": "Web dev",
+            "skills": [
+              "HTML & CSS",
+              "JavaScript",
+              "TypeScript",
+              "ReactJS",
+              "Vue",
+              "Git - GitHub",
+              "NodeJS",
+              "PHP / Laravel",
+              "WordPress"
+            ]
+          },
+          {
+            "hidden": "true",
+            "title": "Arquitectura",
+            "skills": [
+              "Rhino & Grasshopper",
+              "Illustrator",
+              "Revit",
+              "V-Ray",
+              "3ds Max",
+              "Photoshop"
+            ]
+          },
+          {
+            "title": "Idiomas",
+            "skills": [
+              "Español",
+              "Inglés (B2.1)",
+              "Italiano (C1)"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

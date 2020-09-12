@@ -1,3 +1,8 @@
+☐ The dates doesn't have the right attribute, maybe data should be in this format 2017-08-01 to be able to add it.
+
+☐ Add a visibility value in the items in the JSON so I can have data that I don't want to render.
+  This should be improved by adding the 'hidden' to all items, with values true or false.
+
 ☐ Make item description text parsed from and HTML string to be able to create separate paragrafs and text styles.
 
 ☐ When there is no hover in Chrome and from smartphone it doesn't work and the first click opens the item instead of showing the title first.
@@ -17,6 +22,7 @@
 ☐ Make covers of 500px.
 
 
+✔ Add the pdfs to the folder and make them dynamic. @done(20-09-12 11:41)
 ✔ Add curriculum static page. @process @done(20-07-05 00:25)
 ✔ Finish CSS for the smallest screen, when the profile is above the grid. @high @done(20-06-23 19:59)
 ✔ Links on profile should become smaller on small screen. Or make all the cover as SVG so it is responsive. @done(20-06-22 20:41)

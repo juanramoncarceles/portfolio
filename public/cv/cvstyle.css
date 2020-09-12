@@ -83,13 +83,21 @@ h2 {
   position: fixed;
   right: 30px;
   font-family: 'Bellota Text', sans-serif;
-  background-color: #969696;
+  background-color: #acacac;
   color: black;
   padding: 0.5rem;
 }
 
 .side-options > a:hover {
   color: #fff;
+}
+
+.side-options > .lang-select {
+  display: block;
+  width: 100%;
+  margin: 8px auto 0;
+  font-size: inherit;
+  font-family: inherit;
 }
 
 /* SECTION */
@@ -263,8 +271,12 @@ h2 {
     width: 22%;
   }
   
+  .category {
+    margin-top: 1.5rem;
+  }
+
   .category-title {
-    margin-bottom: 0.6rem;
+    margin-bottom: 0;
     font-size: 1.8rem;
   }
 }

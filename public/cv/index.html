@@ -1,225 +1,124 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="cvstyle.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Bellota+Text:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap" rel="stylesheet">
-  <title>Ramón Cárceles | Resume</title>
 </head>
 
 <body>
-  <div class="side-options">
-    <a class="download" href="./ramon_carceles_curriculum-eng.pdf" download="">Download</a>
-  </div>
-  <main>
-    <header>
-      <img class="portrait" src="profile.jpg" alt="Picture of Juan Ramón Cárceles">
-      <div class="self">
-        <h1>Ramón Cárceles</h1>
-        <h2>Web developer</h2>
-        <!-- <h2>Architect</h2> -->
-        <ul class="profile-data">
-          <li><a href="mailto:juanramoncarceles@gmail.com">juanramoncarceles@gmail.com</a></li>
-          <li><a href="https://www.ramoncarceles.com">www.ramoncarceles.com</a></li>
-          <li>Barcelona</li>
-        </ul>
+  <div id="root">
+    <div v-if="Object.keys(contents).length > 0">
+
+      <div class="side-options">
+        <a class="download" :href="'./ramon_carceles_cv-' + currentLang + '.pdf'" download="">{{ words.download[currentLang] }}</a>
+        <select v-on:change="changeLanguage" class="lang-select">
+          <option v-for="key in Object.keys(contents)" :value="key">{{key}}</option>
+        </select>
       </div>
-    </header>
 
-    <section class="category">
+      <main>
+        <header>
+          <img class="portrait" src="profile.jpg" :alt="'Picture of ' + selectedLangContents.header.name">
+          <div class="self">
+            <h1>{{ selectedLangContents.header.name }}</h1>
+            <h2>{{ selectedLangContents.header.title }}</h2>
+            <ul class="profile-data">
+              <li>{{ selectedLangContents.header.email }}</li>
+              <li><a :href="selectedLangContents.header.website.url">{{ selectedLangContents.header.website.text }}</a></li>
+              <li>{{ selectedLangContents.header.location }}</li>
+            </ul>
+          </div>
+        </header>
 
-      <h3 class="category-title">EDUCATION</h3>
+        <div class="category" v-for="section in selectedLangContents.body" :key="section.title">
+          <h3 class="category-title">{{ section.title.toUpperCase() }}</h3>
 
-      <article class="category-content">
-        <p class="category-content-date"><time datetime="2017-09-20">Sep<br>2017</time>&nbsp;-&nbsp;<time datetime="2020-06-16">Jun<br>2020</time></p>
-        <div class="category-content-info">
-          <h3>Master's Degree in Multimedia Applications <span>(78 <abbr title="European Credit Transfer and Accumulation System">ECTS</abbr>)</span></h3>
-          <h4><a href="https://www.uoc.edu/portal/en/estudis_arees/informatica_multimedia_telecomunicacio/index.html" target="_blank">Universitat Oberta de Catalunya</a></h4>
-          <ul class="info-list">
-            <li>Front-end development with React and Vue</li>
-            <li>Back-end development with Laravel and PHP</li>
-            <li>Multimedia content production, management and distribution</li>
-            <li>SEO and web analytics</li>
-          </ul>
+          <div v-for="item in section.items" :key="item.title">
+            <article v-if="!item.hidden && section.type === 'default'" class="category-content">
+              <p class="category-content-date">
+                <time datetime="2017-09-20" v-html="item.period.start.replace(' ', '&lt;/br&gt;')"></time>&nbsp;-&nbsp;<time datetime="2020-06-16" v-html="item.period.end.replace(' ', '&lt;/br&gt;')"></time>
+              </p>
+              <div class="category-content-info">
+                <h3>{{ item.title }} <span v-if="item.credits">({{ item.credits.amount }} <abbr :title="item.credits.type">{{ item.credits.acronym }}</abbr>)</span></h3>
+                <h4>
+                  <span v-if="item.entity.url">
+                    <a :href="item.entity.url" target="_blank">{{ item.entity.name }}</a>
+                  </span>
+                  <span v-else>
+                    {{ item.entity.name }}
+                  </span>
+                  <span v-if="item.entity.extra">&nbsp;({{ item.entity.extra }})</span>
+                </h4>
+                <ul class="info-list">
+                  <li v-for="detail in item.details">{{ detail }}</li>
+                </ul>
+              </div>
+            </article>
+            <article v-else-if="!item.hidden && section.type === 'table'" class="category-content">
+              <h4 class="subtitle subtitle-column">{{ item.title }}</h4>
+              <ul class="skills-list">
+                <li v-for="skill in item.skills">{{ skill }}</li>
+              </ul>
+            </article>
+          </div>
         </div>
-      </article>
+      </main>
 
-      <article class="category-content">
-        <p class="category-content-date"><time datetime="2009-09-15">Sep<br>2009</time>&nbsp;-&nbsp;<time datetime="2016-02-02">Feb<br>2016</time></p>
-        <div class="category-content-info">
-          <h3>Degree in Architecture (330 <abbr title="European Credit Transfer and Accumulation System">ECTS</abbr>)</h3>
-          <h4><a href="https://www.udg.edu/es/estudia/Oferta-formativa/Graus/Fitxes?IDE=954&ID=3105G1214" target="_blank">Universitat de Girona</a></h4>
-          <ul class="info-list">
-            <li>Architectural design</li>
-            <li>Calculation of structures</li>
-          </ul>
-        </div>
-      </article>
+    </div>
+  </div>
 
-      <article class="category-content">
-        <p class="category-content-date"><time datetime="2013-09-29">Sep<br>2013</time>&nbsp;-&nbsp;<time datetime="2014-07-24">Jul<br>2014</time></p>
-        <div class="category-content-info">
-          <h3>Architecture studies abroad</h3>
-          <h4>Politecnico di Milano</h4>
-        </div>
-      </article>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.min.js" integrity="sha512-BKbSR+cfyxLdMAsE0naLReFSLg8/pjbgfxHh/k/kUC82Hy7r6HtR5hLhobaln2gcTvzkyyehrdREdjpsQwy2Jw==" crossorigin="anonymous"></script>
 
-    </section>
-
-    <section class="category">
-
-      <h3 class="category-title">EXPERIENCE</h3>
-
-      <article class="category-content">
-        <p class="category-content-date"><time datetime="2018-11-12">Nov<br>2018</time>&nbsp;-&nbsp;<time>Current</time></p>
-        <div class="category-content-info">
-          <h3>Product Manager VisualARQ</h3>
-          <h4><a href="https://www.asuni.com/" target="_blank">Asuni Soft</a> (Barcelona)</h4>
-          <ul class="info-list">
-            <li>Product management: planning, strategy, analysis...</li>
-            <li>Technical support</li>
-            <li>Software demonstrations to clients</li>
-            <li>Multimedia content for product promotion and documentation</li>
-            <li>Email campaings</li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="category-content">
-        <p class="category-content-date"><time datetime="2017-06-20">Jun<br>2017</time>-<time datetime="2018-09-01">Sep<br>2018</time></p>
-        <div class="category-content-info">
-          <h3>Architect</h3>
-          <h4>Disseny, Arquitectura i Urbanisme (Girona)</h4>
-          <ul class="info-list">
-            <li>Developement of residential projects from concept to construction</li>
-            <li>Buildings technical documentation, budgets and construction details</li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="category-content">
-        <p class="category-content-date"><time datetime="2016-11-01">Nov<br>2016</time>&nbsp;-&nbsp;<time datetime="2017-05-01">May<br>2017</time></p>
-        <div class="category-content-info">
-          <h3>Architect assistant</h3>
-          <h4><a href="https://www.mokearchitecten.nl/" target="_blank">MOKE Architecten</a> (Amsterdam)</h4>
-          <ul class="info-list">
-            <li>Developement of residential projects</li>
-            <li>Architectural 3D modelling and visualization</li>
-          </ul>
-        </div>
-      </article>
-
-      <!-- <article class="category-content">
-        <p class="category-content-date"><time datetime="2016-05-17">May<br>2016</time>&nbsp;-&nbsp;<time datetime="2016-08-17">Aug<br>2016</time></p>
-        <div class="category-content-info">
-          <h3>Architect assistant</h3>
-          <h4><a href="http://davorbusnja.com/" target="_blank">@ n'onA d.o.o. Davor Busnja</a> (Dubrovnik)</h4>
-          <ul class="info-list">
-            <li>Design of office and exhibition projects</li>
-            <li>Construction details, 3D modelling and visualization</li>
-          </ul>
-        </div>
-      </article> -->
-
-    </section>
-
-    <section class="category">
-      <h3 class="category-title">NON-REGULATED EDUCATION</h3>
-      <article class="category-content">
-        <p class="category-content-date"><time datetime="2018-12-11">Dec<br>2018</time>&nbsp;-&nbsp;<time datetime="2018-12-14">Dec<br>2018</time></p>
-        <div class="category-content-info">
-          <h3>Workshop on Grasshopper3D programming in C#</h3>
-          <h4><a href="https://www.mcneel.com/eu" target="_blank">McNeel Europe</a> (Barcelona) 28h</h4>
-          <ul class="info-list">
-            <li>Advanced C# scripting with Grasshopper</li>
-            <li>Grasshopper plug-in developement</li>
-          </ul>
-        </div>
-      </article>
-      <article class="category-content">
-        <p class="category-content-date"><time datetime="2018-09-01">Sep<br>2018</time>&nbsp;-&nbsp;<time datetime="2018-10-01">Oct<br>2018</time></p>
-        <div class="category-content-info">
-          <h3>Full Stack web developement with ReactJS</h3>
-          <h4><a href="https://fundacionesplai.org/enfocat/" target="_blank">Fundació Esplai</a> (Barcelona) 150h</h4>
-          <ul class="info-list">
-            <li>Front-end development with ReactJS</li>
-            <li>Back-end development with NodeJS, Express and MongoDB</li>
-          </ul>
-        </div>
-      </article>
-      <article class="category-content">
-        <p class="category-content-date"><time datetime="2017-07-01">Jul<br>2017</time>&nbsp;-&nbsp;<time datetime="2017-09-01">Sep<br>2017</time></p>
-        <div class="category-content-info">
-          <h3>Technological skills in Java and SQL</h3>
-          <h4><a href="https://fundacionesplai.org/enfocat/" target="_blank">Fundació Esplai</a> (Barcelona) 250h</h4>
-          <ul class="info-list">
-            <li>Object oriented programming with Java</li>
-            <li>Relational databases (MySQL)</li>
-          </ul>
-        </div>
-      </article>
-      <!-- <article class="category-content">
-        <p class="category-content-date"><time datetime="2015-10-01">Oct<br>2015</time>&nbsp;-&nbsp;<time datetime="2015-11-01">Nov<br>2015</time></p>
-        <div class="category-content-info">
-          <h3>Autodesk Revit</h3>
-          <h4><a href="https://www.metropa.es" target="_blank">METROPA School</a> (Madrid) 60h</h4>
-          <ul class="info-list">
-            <li>BIM Modelling and organization</li>
-            <li>Project documentation and presentation</li>
-          </ul>
-        </div>
-      </article> -->
-    </section>
-
-    <section class="category">
-
-      <h3 class="category-title">SKILLS</h3>
-
-      <article class="category-content">
-        <h3 class="subtitle subtitle-column">Web dev</h3>
-        <ul class="skills-list">
-          <li>HTML & CSS</li>
-          <!-- <li>CSS & SASS</li> -->
-          <li>JavaScript</li>
-          <li>TypeScript</li>
-          <li>React</li>
-          <li>Vue</li>
-          <li>Git & GitHub</li>
-          <li>NodeJS</li>
-          <li>WordPress</li>
-          <!-- <li>WooCommerce</li> -->
-          <li>Google API</li>
-          <!-- <li>Firebase</li> -->
-        </ul>
-      </article>
-
-      <!-- <article class="category-content">
-        <h3 class="subtitle subtitle-column">Architecture</h3>
-        <ul class="skills-list">
-          <li>Rhino & Grasshopper</li>
-          <li>Illustrator</li>
-          <li>Photoshop</li>
-          <li>Revit</li>
-          <li>V-Ray</li>
-          <li>AutoCAD</li>
-        </ul>
-      </article> -->
-
-      <article class="category-content">
-        <h3 class="subtitle subtitle-column">Languages</h3>
-        <ul class="skills-list">
-          <li>Spanish</li>
-          <li>English (B2.1)</li>
-          <li>Italian (C1)</li>
-        </ul>
-      </article>
-
-    </section>
-  </main>
+  <script>
+    new Vue({
+      el: '#root',
+      data: {
+        selectedLangContents: [],
+        currentLang: '',
+        contents: {},
+        words: {
+          download: {
+            en: "Download",
+            es: "Descargar",
+            it: "Scaricare"
+          },
+          cv: {
+            en: "Resume",
+            es: "Curriculum",
+            it: "Curriculum"
+          }
+        }
+      },
+      methods: {
+        changeLanguage: function (e) {
+          const selectedLang = e.target.value;
+          this.selectedLangContents = this.contents[e.target.value];
+          this.currentLang = selectedLang;
+          document.title = this.selectedLangContents.header.name + ' | ' + this.words.cv[selectedLang];
+          document.documentElement.setAttribute('lang', selectedLang);
+        }
+      },
+      mounted: async function () {
+        const resData = await fetch('/cvdata.json');
+        const data = await resData.json();
+        // Get the first key of the data object to show its contents.
+        let firstLang;
+        for (let key in data) {
+          firstLang = key;
+          break;
+        }
+        this.selectedLangContents = data[firstLang];
+        this.currentLang = firstLang;
+        document.title = this.selectedLangContents.header.name + ' | ' + this.words.cv[firstLang];
+        document.documentElement.setAttribute('lang', firstLang);
+        this.contents = data;
+      }
+    });
+  </script>
 </body>
 
 </html>
